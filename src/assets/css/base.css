@@ -9,7 +9,7 @@ i,em{font-style:normal;}
 table{border-collapse:collapse;border-spacing:0;}
 table th,table td{border:1px solid #ddd;padding:5px;}
 table th{font-weight:inherit;border-bottom-width:2px;border-bottom-color:#ccc;}
-img{border:0 none;width:auto\9;max-width:100%;vertical-align:top; height:auto;}
+img{border:0 none;width:auto\9;max-width:100%;vertical-align:top; height:auto;display: block;}
 button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;vertical-align:baseline;}
 button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;}
 button[disabled],input[disabled]{cursor:default;}
