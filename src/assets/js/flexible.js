@@ -7,7 +7,7 @@
     //浏览器竖屏与横屏转换的BUG。
     function refreshRem() {
         var width = docEl.getBoundingClientRect().width;
-        maxWidth = maxWidth || 750;
+        maxWidth = maxWidth || 1334;
         width>maxWidth && (width=maxWidth);
         var rem = width * 100 / designWidth;
         remStyle.innerHTML = 'html{font-size:' + rem + 'px;}';
@@ -43,4 +43,4 @@
             doc.body.style.fontSize = "16px";
         }, false);
     }
-})(750, 750);
+})(1334, 1334);

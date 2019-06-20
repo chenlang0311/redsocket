@@ -2,9 +2,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import "./assets/js/flexible"
+import Vconsole from 'vconsole'
 
-Vue.config.productionTip = false
+const vConsole = new Vconsole();
 
+export default vConsole;
+
+Vue.config.productionTip = false;
 new Vue({
   router,
   render: h => h(App)
