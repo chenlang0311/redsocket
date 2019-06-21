@@ -1,46 +1,53 @@
-(function(designWidth, maxWidth) {
-    var doc = document,
-    win = window,
-    docEl = doc.documentElement,
-    remStyle = document.createElement("style"),
-    tid;
-    //浏览器竖屏与横屏转换的BUG。
-    function refreshRem() {
-        var width = docEl.getBoundingClientRect().width;
-        maxWidth = maxWidth || 1334;
-        width>maxWidth && (width=maxWidth);
-        var rem = width * 100 / designWidth;
-        remStyle.innerHTML = 'html{font-size:' + rem + 'px;}';
-    }
-
-    if (docEl.firstElementChild) {
-        docEl.firstElementChild.appendChild(remStyle);
-    } else {
-        var wrap = doc.createElement("div");
-        wrap.appendChild(remStyle);
-        doc.write(wrap.innerHTML);
-        wrap = null;
-    }
-    //要等 wiewport 设置好后才能执行 refreshRem，不然 refreshRem 会执行2次；
-    refreshRem();
-
-    win.addEventListener("resize", function() {
-        clearTimeout(tid); //防止执行两次
-        tid = setTimeout(refreshRem, 300);
-    }, false);
-
-    win.addEventListener("pageshow", function(e) {
-        if (e.persisted) { // 浏览器后退的时候重新计算
-            clearTimeout(tid);
-            tid = setTimeout(refreshRem, 300);
+/**
+ * rem计算方式：设计图尺寸px / 100 = 实际rem  例: 100px = 1rem
+ */
+!function (window) {
+    /* 设计图文档宽度 */
+    var docWidth = 750;
+    var doc = window.document,
+        docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+       
+    var recalc = (function refreshRem () {
+        var clientWidth = docEl.getBoundingClientRect().width;
+        var  height = document.documentElement.clientHeight;
+        //需要JQUERY处理横屏
+        var print = $('#app');
+        if(clientWidth>height){
+            docWidth = 1334;
+            print.width(clientWidth);
+            print.height(height);
+            print.css('top',  0 );
+            print.css('left',  0 );
+            print.css('transform' , 'none');
+            print.css('transform-origin' , '50% 50%');
+        }else{
+            docWidth = 750;
+            print.width(height);
+            print.height(clientWidth);
+            print.css('top',  (height-clientWidth)/2 );
+            print.css('left',  0-(height-clientWidth)/2 );
+            print.css('transform' , 'rotate(90deg)');
+            print.css('transform-origin' , '50% 50%');
         }
-    }, false);
+        /* 8.55：小于320px不再缩小，11.2：大于420px不再放大 */
+        docEl.style.fontSize = Math.max(Math.min(20 * (clientWidth / docWidth), 20), 8.55) * 5 + 'px';
+        return refreshRem;
+    })();
 
-    if (doc.readyState === "complete") {
-        doc.body.style.fontSize = "16px";
-    } else {
-        doc.addEventListener("DOMContentLoaded", function() {
-            doc.body.style.fontSize = "16px";
-        }, false);
+    /* 添加倍屏标识，安卓倍屏为1 */
+    docEl.setAttribute('data-dpr', window.navigator.appVersion.match(/iphone/gi) ? window.devicePixelRatio : 1);
+
+    if (/iP(hone|od|ad)/.test(window.navigator.userAgent)) {
+        /* 添加IOS标识 */
+        doc.documentElement.classList.add('ios');
+        /* IOS8以上给html添加hairline样式，以便特殊处理 */
+        if (parseInt(window.navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/)[1], 10) >= 8)
+            doc.documentElement.classList.add('hairline');
     }
-})(1334, 1334);
+
+    if (!doc.addEventListener) return;
+    window.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+
+}(window);

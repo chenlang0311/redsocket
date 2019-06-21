@@ -33,5 +33,8 @@ export default {
 </script>
 
 <style lang="scss">
-
+.alphabet{
+  height: 100%;
+  width: 100%;
+}
 </style>

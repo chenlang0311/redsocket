@@ -22,8 +22,8 @@ export default {};
 .pretest {
 //   background: url("../assets/img/alphabet/bc2.png") no-repeat;
 //   background-size: contain;
-//   height: 7.5rem;
-//   width: 13.34rem;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   position: relative;
   .bg_img{

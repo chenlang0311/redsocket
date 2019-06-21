@@ -67,7 +67,7 @@ module.exports = {
   devServer: {
     open: process.platform === 'darwin',
     host: '0.0.0.0', // 允许外部ip访问
-    port: 8022, // 端口
+    port: 8023, // 端口
     https: false, // 启用https
     overlay: {
       warnings: true,
