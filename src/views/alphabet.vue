@@ -2,7 +2,8 @@
   <div class="alphabet">
     <!-- <Catalog /> -->
     <!-- <CatalogGuide /> -->
-    <PreTest />
+    <!-- <PreTest /> -->
+    <TestResult />
     <!-- <Record /> -->
   </div>
 </template>
@@ -11,6 +12,7 @@
 import Catalog from '../components/Catalog.vue'
 import CatalogGuide from '../components/CatalogGuide.vue'
 import PreTest from '../components/PreTest.vue'
+import TestResult from '../components/TestResult.vue'
 export default {
   data() {
     return {
@@ -20,7 +22,8 @@ export default {
   components: {
     Catalog,
     CatalogGuide,
-    PreTest
+    PreTest,
+    TestResult
   },
   mounted() {
     console.log("AudioRecorder");
