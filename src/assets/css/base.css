@@ -26,8 +26,17 @@ button,input,textarea{
 -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 *{box-sizing: border-box;}
+.f26{
+    font-size: .26rem;
+}
 .f30{
     font-size: .30rem;
+}
+.f40{
+    font-size: .40rem;
+}
+.f32{
+    font-size: .32rem;
 }
 .fw4{
     font-weight: 400;

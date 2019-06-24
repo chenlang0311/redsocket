@@ -16,7 +16,7 @@ export default {
   methods:{
     toAlphabet(){
       this.$router.push({
-        path:'/alphabet'
+        path:'/achievement'
       })
     }
   }

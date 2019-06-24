@@ -21,5 +21,10 @@ export default new Router({
       name: 'alphabet',
       component: () => import(/* webpackChunkName: "about" */ './views/alphabet.vue')
     },
+    {
+      path: '/achievement',
+      name: 'achievement',
+      component: () => import(/* webpackChunkName: "about" */ './views/Achievement.vue')
+    },
   ]
 })
