@@ -1,18 +1,24 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Record />
+    <div @click="toAlphabet">toAlphabet</div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import Record from '@/components/Record.vue'
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    Record
+  },
+  methods:{
+    toAlphabet(){
+      this.$router.push({
+        path:'/alphabet'
+      })
+    }
   }
 }
 </script>

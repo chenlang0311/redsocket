@@ -18,10 +18,13 @@ export default {
     };
   },
   created() {
-      this.mRecorder();
+      // this.mRecorder();
   },
   methods: {
-      start(){},
+      start(){
+        console.log("start");
+        wx.startRecord();
+      },
       stop(){},
     mRecorder(opt){
         opt = opt ? opt : {};

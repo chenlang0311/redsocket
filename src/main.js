@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import "./assets/js/flexible"
+// import "./assets/js/flexxble2"
 import Vconsole from 'vconsole'
 
 const vConsole = new Vconsole();

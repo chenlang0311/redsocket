@@ -32,3 +32,52 @@ button,input,textarea{
 .fw4{
     font-weight: 400;
 }
+.one_td::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-top: 1px solid #e5e5e5;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    pointer-events: none;  
+  }
+  .one_bd::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      border-bottom: 1px solid #e5e5e5;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 200%;
+      height: 200%;
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+      -webkit-transform-origin: left top;
+      transform-origin: left top;
+      pointer-events: none;  
+  }
+  .four_bd::before{
+    pointer-events: none;
+    width:200%;
+    height:200%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:0;
+    content:"";
+    -webkit-transform:scale(0.5);
+    -webkit-transform-origin:0 0;
+    transform:scale(0.5);
+    transform-origin:0 0;
+    border: 1px solid #e5e5e5;
+  }

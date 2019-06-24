@@ -1,9 +1,9 @@
 <template>
-  <div class="alphabet">
+  <div class="alphabet" id="deg90">
     <!-- <Catalog /> -->
-    <!-- <CatalogGuide /> -->
+    <CatalogGuide />
     <!-- <PreTest /> -->
-    <TestResult />
+    <!-- <TestResult /> -->
     <!-- <Record /> -->
   </div>
 </template>
@@ -14,6 +14,7 @@ import CatalogGuide from '../components/CatalogGuide.vue'
 import PreTest from '../components/PreTest.vue'
 import TestResult from '../components/TestResult.vue'
 export default {
+  
   data() {
     return {
       
@@ -25,13 +26,22 @@ export default {
     PreTest,
     TestResult
   },
+    beforeRouteEnter(to, from, next) {
+    next(vm => {
+      //触发resize强制横屏
+      recalc();
+      // vm.reffer = from.fullPath;
+    });
+  },
+  created() {
+    
+  },
   mounted() {
     console.log("AudioRecorder");
   },
-  created() {
-  },
   methods: {
-  }
+  },
+  
 };
 </script>
 

@@ -7,12 +7,11 @@
     var doc = window.document,
         docEl = doc.documentElement,
         resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
-       
     var recalc = (function refreshRem () {
         var clientWidth = docEl.getBoundingClientRect().width;
         var  height = document.documentElement.clientHeight;
         //需要JQUERY处理横屏
-        var print = $('#app');
+        var print = $('#deg90');
         if(clientWidth>height){
             docWidth = 1334;
             print.width(clientWidth);
@@ -37,7 +36,6 @@
 
     /* 添加倍屏标识，安卓倍屏为1 */
     docEl.setAttribute('data-dpr', window.navigator.appVersion.match(/iphone/gi) ? window.devicePixelRatio : 1);
-
     if (/iP(hone|od|ad)/.test(window.navigator.userAgent)) {
         /* 添加IOS标识 */
         doc.documentElement.classList.add('ios');
@@ -45,9 +43,7 @@
         if (parseInt(window.navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/)[1], 10) >= 8)
             doc.documentElement.classList.add('hairline');
     }
-
     if (!doc.addEventListener) return;
     window.addEventListener(resizeEvt, recalc, false);
     doc.addEventListener('DOMContentLoaded', recalc, false);
-
 }(window);
