@@ -29,6 +29,9 @@ button,input,textarea{
 .f26{
     font-size: .26rem;
 }
+.f28{
+    font-size: .28rem;
+}
 .f30{
     font-size: .30rem;
 }
@@ -40,6 +43,12 @@ button,input,textarea{
 }
 .fw4{
     font-weight: 400;
+}
+.fwb{
+    font-weight: bold;
+}
+.c123{
+    color: #DE123D;
 }
 .one_td::before{
     content: '';
