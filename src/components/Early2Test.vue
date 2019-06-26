@@ -39,7 +39,7 @@
       </div>
     </div>
 
-    <div class="early_next">
+    <div class="early_next" v-if="showState==20">
         <div class="early_next_top">
             <div class="early_next_top-item f28 fwb" v-for="(item,i) in earlyList" :key="i">{{i+1}}</div>
         </div>
