@@ -165,7 +165,7 @@
 export default {
   data() {
     return {
-      showState: 20,
+      showState: 10,
       lv: 1,
       lv1BG: require("../assets/img/achieve/lv1-bc.png"),
       lv1GbBack: require("../assets/img/achieve/lv1_back-bc.png"),
@@ -262,6 +262,12 @@ export default {
       lv3RightBottom:[1,2,3]
     };
   },
+  beforeRouteEnter(to, from, next) {
+  next(vm => {
+    //触发resize强制横屏
+    vm.clCheckScrenn();
+  });
+},
   created() {
     this.lv = this.$route.query.lv;
     if (this.lv >= 1) {

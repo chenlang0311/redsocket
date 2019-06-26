@@ -5,11 +5,18 @@ import router from './router'
 import Vconsole from 'vconsole'
 
 const vConsole = new Vconsole();
-
+Vue.prototype.clCheckScrenn=function(){
+  var doc = window.document;
+  var docEl = doc.documentElement;
+  var clientWidth = docEl.getBoundingClientRect().width;
+      var height = document.documentElement.clientHeight;
+      if(clientWidth<height){
+        recalc();
+      }
+};
 export default vConsole;
-
 Vue.config.productionTip = false;
 new Vue({
   router,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');
