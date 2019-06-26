@@ -7,9 +7,11 @@
       <div class="item" @click="to('achievement',{lv:1})">证书(LV1)</div>
       <div class="item" @click="to('fictionlist')">Early2目录</div>
       <div class="item" @click="to('early2')">Early2-Step9</div>
+      <div class="item" @click="to('Early3List')">Early3目录</div>
+      <div class="item" @click="to('early3')">Early3-Step9</div>
       <div class="item" @click="to('lettera')">LetterA目录</div>
-      <div class="item"></div>
-      <div class="item"></div>
+      <!-- <div class="item"></div>
+      <div class="item"></div> -->
     </div>
   </div>
 </template>

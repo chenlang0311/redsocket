@@ -41,6 +41,16 @@ export default new Router({
       name: 'early2',
       component: () => import(/* webpackChunkName: "about" */ './views/early2.vue')
     },
+    {//14个目录
+      path: '/Early3List',
+      name: 'Early3List',
+      component: () => import(/* webpackChunkName: "about" */ './views/Early3List.vue')
+    },
+    {//14个目录
+      path: '/early3',
+      name: 'early3',
+      component: () => import(/* webpackChunkName: "about" */ './views/early3.vue')
+    },
   ]
 });
 
