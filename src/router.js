@@ -36,6 +36,16 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/LetterA.vue')
     },
     {//14个目录
+      path: '/early1',
+      name: 'early1',
+      component: () => import(/* webpackChunkName: "about" */ './views/early1.vue')
+    },
+    {//14个目录
+      path: '/Early1List',
+      name: 'Early1List',
+      component: () => import(/* webpackChunkName: "about" */ './views/Early1List.vue')
+    },
+    {//14个目录
       path: '/early2',
       name: 'early2',
       component: () => import(/* webpackChunkName: "about" */ './views/early2.vue')
