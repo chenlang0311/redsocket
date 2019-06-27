@@ -9,6 +9,8 @@
       <div class="item" @click="to('early2')">Early2-Step9</div>
       <div class="item" @click="to('Early3List')">Early3目录</div>
       <div class="item" @click="to('early3')">Early3-Step9</div>
+      <div class="item" @click="to('Early4List')">Early4目录</div>
+      <div class="item" @click="to('early4')">Early4-Step9</div>
       <div class="item" @click="to('lettera')">LetterA目录</div>
       <!-- <div class="item"></div>
       <div class="item"></div> -->

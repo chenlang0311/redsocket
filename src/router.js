@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 
 Vue.use(Router)
 
@@ -9,7 +8,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component:  () => import(/* webpackChunkName: "about" */ './views/Home.vue')
     },
     {
       path: '/about',
@@ -50,6 +49,16 @@ export default new Router({
       path: '/early3',
       name: 'early3',
       component: () => import(/* webpackChunkName: "about" */ './views/early3.vue')
+    },
+    {//14个目录
+      path: '/early4',
+      name: 'early4',
+      component: () => import(/* webpackChunkName: "about" */ './views/early4.vue')
+    },
+    {//14个目录
+      path: '/Early4List',
+      name: 'Early4List',
+      component: () => import(/* webpackChunkName: "about" */ './views/Early4List.vue')
     },
   ]
 });
