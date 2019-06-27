@@ -300,7 +300,6 @@ export default {
           &6{
               height: .45rem;
               width: .49rem;
-            //   margin-top: .10rem;
           }
         &7{
           height: 0.41rem;
