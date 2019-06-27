@@ -1,81 +1,91 @@
 <template>
-  <div class="early4-test">
+  <div class="early1-test">
     <div class="sort_num">
-      <img src="../assets/img/early2/biaoqian.png" class="bg_img" />
+      <img src="../assets/img/early2/biaoqian.png" class="bg_img">
       <p class="sort_num_des">1/5</p>
     </div>
-    <img
-      src="../assets/img/alphabet/left.png"
-      alt
-      class="jiantou_next jiantou_last"
-      @click="last"
-    />
-    <img
-      src="../assets/img/alphabet/jiantou-icon.png"
-      alt
-      class="jiantou_next"
-      @click="next"
-    />
-    <div class="early_con_9 wrap_bg" v-if="showState == 10">
-      <img class="early_con_9_top" src="" />
-      <div class="early_con_9_mid">
-        <div class="item f26 fw4 cfff" v-for="(item, i) in earlyListQ" :key="i">
-          {{ item.f }}
+    <img src="../assets/img/alphabet/left.png" alt class="jiantou_next jiantou_last" @click="last">
+    <img src="../assets/img/alphabet/jiantou-icon.png" alt class="jiantou_next" @click="next">
+    <div class="early_con_10" v-if="showState == 10">
+      <div class="early_con_10_top">
+        <div class="q_img_wrap">
+          <img src="../assets/img/early1/ban1.png" alt class="q_img">
+        </div>
+        <div class="answer_wrap">
+          <div class="answer_des f48 fw4">sun</div>
+          <div class="answer_line"></div>
+          <div class="answer_q f48">?</div>
         </div>
       </div>
-      <div class="early_con_9_bottom">
-        <div class="item f26 fw4 cfff" v-for="(item, i) in earlyListA" :key="i">
-          {{ item.f }}
+      <div class="early_con_10_btngroup">
+        <div class="en_btn al_btn">
+          English
+          <img src="../assets/img/early1/duigou.png" alt class="right_img">
+        </div>
+        <div class="fy_btn al_btn">翻译</div>
+        <div class="zd_btn al_btn">自动</div>
+        <div class="cf_btn al_btn">
+          重复次数:
+          <span class="c122">0/5</span>
+        </div>
+        <div class="sd_btn al_btn">
+          播放速度:
+          <span class="c122">正常</span>
         </div>
       </div>
+      <img src="../assets/img/alphabet/shengyin-icon.png" alt class="sy_btn">
     </div>
-
-    <div class="early_con_20 wrap_bg" v-if="showState == 20">
-      <div class="early_con_20_top">
-        <div class="item f30 fw4" v-for="(item, i) in early20ListQ" :key="i">
-          {{ item }}
+<div class="early_con_10" v-if="showState == 20">
+      <div class="early_con_10_top">
+        <div class="q_img_wrap">
+          <img src="" alt class="q_img">
+        </div>
+        
+        <div class="answer_wrap">
+          <div class="answer_des f48 fw4">kangaroo</div>
+          <div class="answer_line"></div>
+          <div class="answer_q f48">?</div>
         </div>
       </div>
-      <div class="early_con_20_bottom">
-        <div class="item" v-for="(item, i) in early20ListA" :key="i">
-          <div class="apl f40 fw4 cfff">{{ item.alp}}</div>
-          <div class="num f30">{{ item.num }}</div>
+      <div class="early_con_10_btngroup">
+        <div class="en_btn al_btn">
+          English
+          <img src="../assets/img/early1/duigou.png" alt class="right_img">
+        </div>
+        <div class="fy_btn al_btn">翻译</div>
+        <!-- <div class="zd_btn al_btn">自动</div> -->
+        <div class="cf_btn al_btn">
+          重复次数:
+          <span class="c122">0/5</span>
+        </div>
+        <div class="sd_btn al_btn">
+          播放速度:
+          <span class="c122">正常</span>
         </div>
       </div>
+      <img src="../assets/img/alphabet/luyin.png" alt class="sy_btn">
     </div>
 
     <div class="early_con wrap_bg" v-if="showState == 30">
-      <div class="early_con_left"></div>
-      <div class="early_con_right f36 fw4">
-        <div>I want to<span class="lv1_left_top_bd"></span> it here by myself.
-        </div>
-        <span class="item f32 fw4" v-for="(item, i) in eraly30ListA" :key="i">
-          {{ item.idx }}.{{item.val}}
-        </span>
-      </div>
-    </div>
+      <div class="item" v-for="(item,i) in  early30List" :key="i">
 
+      </div>
+      
+    </div>
+<img src="../assets/img/alphabet/shengyin-icon.png" alt class="sy_btn" v-if="showState == 30">
     <div class="early_next wrap_bg" v-if="showState == 40">
       <div class="early_next_top">
         <div
           class="early_next_top-item f28 fwb"
-          v-for="(item, i) in early40ListQ"
+          v-for="(item, i) in early40List"
           :key="i"
-        >
-          {{ i + 1 }}
-        </div>
+        >{{ i + 1 }}</div>
       </div>
-      <div class="early_next_bottom">
-        <div
-          class="early_next_bottom-item f38 fwb cfff"
-          v-for="(item, i) in early40ListA"
-          :key="i"
-        >
-          {{ item }}
+        <div class="early_next_bottom">
+            <div class="early_next_bottom-item f51 fwb cfff" v-for="(item,i) in early40List" :key="i">{{item}}</div>
         </div>
-      </div>
     </div>
-    <div class="early_next_btn cfff fwb" v-if="showState == 40">提交</div>
+    <img src="../assets/img/alphabet/shengyin-icon.png" alt class="sy_btn sy_btn40" v-if="showState == 40">
   </div>
 </template>
 
@@ -85,6 +95,7 @@ export default {
     return {
       showState: 10,
       maxState: 40,
+      early40List:["the","Here is","Food"],
       earlyList: [],
       earlyListQ: [
         { f: "h" },
@@ -135,9 +146,9 @@ export default {
         { idx: "C", val: "sail" },
         { idx: "D", val: "build" }
       ],
-      early40ListQ:[1,2,3,4,5],
-      early40ListA:[{},{},{},{},{},{}],
-
+      early30List:[1,2,3,4],
+      early40ListQ: [1, 2, 3, 4, 5],
+      early40ListA: [{}, {}, {}, {}, {}, {}]
     };
   },
   methods: {
@@ -156,11 +167,11 @@ export default {
 </script>
 
 <style lang="scss">
-.early4-test {
+.early1-test {
   height: 100%;
   width: 100%;
-  background: url("../assets/img/early4/bc.png") no-repeat;
-  background-size: contain;
+  background: url("../assets/img/early1/bc.png") no-repeat;
+  background-size: 100% 100%;
   position: relative;
   overflow: hidden;
   .wrap_bg {
@@ -227,48 +238,81 @@ export default {
   .jiantou_last {
     left: 0.3rem;
   }
-  .early_con_9 {
-    width: 9.6rem;
-    height: 4.63rem;
-    margin: 0.36rem auto 0;
+  .early_con_10 {
+    overflow: hidden;
     &_top {
-      height: 1.54rem;
-      width: 2.09rem;
-      margin-top: 0.21rem;
-      background-color: #fff;
-      border-radius: 0.14rem;
+      display: flex;
+      margin-top: 0.45rem;
+      .q_img_wrap{
+        height: 3.36rem;
+        width: 4.85rem;
+        background:rgba(247,247,247,1);
+        border:.14rem solid rgba(255,255,255,1);
+        box-shadow:0px .05rem 0px 0px rgba(215,248,251,0.65);
+        border-radius:.49rem;
+        margin-left: 1.42rem;
+        margin-right: 0.63rem;
+        .q_img{
+          height: 100%;
+          width: 100%;
+          border-radius:.49rem;
+          overflow: hidden;
+        }
+      }
+      .q_img_wrap,
+      .answer_wrap {
+        height: 3.41rem;
+        width: 4.85rem;
+      }
+      .answer_wrap {
+        background: url("../assets/img/early1/ban1_1.png") no-repeat;
+        background-size: contain;
+        padding-top: 0.95rem;
+
+        .answer_des {
+          line-height: 0.21rem;
+        }
+        .answer_line {
+          width: 2.79rem;
+          height: 0.02rem;
+          background: rgba(51, 51, 51, 1);
+          margin: 0.52rem auto;
+        }
+        .answer_q {
+          line-height: 0.21rem;
+        }
+      }
     }
-    &_mid {
+    &_btngroup {
       display: flex;
       align-items: center;
-      margin-top: 0.22rem;
-      .item {
-        width: 0.88rem;
-        height: 0.88rem;
-        background: rgba(126, 106, 176, 1);
-        border-radius: 0.1rem;
-        text-align: center;
-        line-height: 0.88rem;
-        margin-right: 0.14rem;
-      }
-      :nth-child(3) {
-        margin-right: 1.05rem;
+      justify-content: center;
+      margin-top: 0.19rem;
+      .al_btn{
+        display: flex;
+        align-items: center;
+        height: .55rem;
+        background:rgba(126,106,176,1);
+        box-shadow:0px .04rem 0px 0px rgba(115,94,168,1);
+        border-radius:.10rem;
+        min-width: 1.60rem;
+        justify-content: center;
+        color: #fff;
+        font-weight: 400;
+        margin-right: .20rem;
+        font-size: .28rem;
+        padding: 0 .19rem;
+        .right_img{
+          height: .22rem;
+          width: .28rem;
+          margin-left: .17rem;
+        }
       }
     }
-    &_bottom {
-      margin-top: 0.32rem;
-      display: flex;
-      align-items: center;
-      .item {
-        width: 0.88rem;
-        height: 0.88rem;
-        background: rgba(236, 66, 73, 1);
-        box-shadow: 0px 0.04rem 0px 0px rgba(220, 39, 46, 1);
-        border-radius: 0.1rem;
-        text-align: center;
-        line-height: 0.88rem;
-        margin-right: 0.17rem;
-      }
+    .sy_btn{
+      height: 1.10rem;
+      width: 1.10rem;
+      margin:  .27rem auto 0;
     }
   }
 
@@ -317,44 +361,42 @@ export default {
   }
 
   .early_con {
-    width: 9.9rem;
-    height: 4.63rem;
-    margin: 0.76rem auto 0;
+    width: 11.09rem;
+    height: 3.17rem;
+    margin: 1.33rem auto 0;
     flex-direction: row;
-    &_left{
-        height: 1.95rem;
-        width: 2.64rem;
-        background-color: #f4f4f4;
-        border-radius: .14rem;
-        overflow: hidden;
-        margin-left: .44rem;
+    padding-left: .54rem;
+    .item{
+      height: 1.52rem;
+      width: 2.07rem;
+      margin-right: .50rem;
+      border-radius: .12rem;
+      background: #ddd;
     }
-    &_right{
-        margin-left: .60rem;
-        text-align: left;
-        .item{
-            display: inline-block;
-            margin-top: .45rem;
-            line-height: 1;
-            margin-right: .49rem;
-        }
-    }
+    
   }
-
+.sy_btn{
+      height: 1.10rem;
+      width: 1.10rem;
+      margin:  .37rem auto 0;
+    }
+    .sy_btn40{
+      margin-top: .55rem;
+    }
   .early_next {
-    width: 10.63rem;
-    height: 4.33rem;
-    margin: 0.69rem auto 0;
+    width: 7.04rem;
+    height: 3.53rem;
+    margin: 0.73rem auto 0;
     &_top {
-      width: 8.74rem;
-      height: 1.2rem;
+      width: 5.67rem;
+      height: 1.05rem;
       background: rgba(247, 247, 247, 1);
       border: 0.02rem dashed rgba(204, 204, 204, 1);
       border-radius: 0.06rem;
       display: flex;
       align-items: center;
       justify-content: space-around;
-      margin-top: 0.26rem;
+      margin-top: 0.40rem;
       &-item {
         height: 0.38rem;
         width: 0.38rem;
@@ -363,22 +405,21 @@ export default {
         line-height: 0.38rem;
       }
     }
-    &_bottom {
-      display: flex;
-      align-items: center;
-      justify-content:space-between;
-      width: 9.84rem;
-      height: 1.72rem;
-      background: rgba(247, 247, 247, 1);
-      border: 0.02rem dashed rgba(204, 204, 204, 1);
-      margin: 0.44rem auto 0;
-      padding: 0 .37rem;
-      &-item {
-        height: 1.36rem;
-        width: 1.36rem;
-        border-radius: 0.06rem;
-        background-color: #fff;
-      }
+     &_bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 5.67rem;
+        margin: .52rem auto 0;
+        &-item{
+            height: .88rem;
+            border-radius: .06rem;
+            background-color: rgba(0,193,183,1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 .20rem;
+        }
     }
   }
 }

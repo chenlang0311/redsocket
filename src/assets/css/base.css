@@ -2,7 +2,7 @@ body,dl,dd,ul,ol,h1,h2,h3,h4,h5,h6,pre,form,input,textarea,p,hr,thead,tbody,tfoo
 ul,ol{list-style:none;}
 a{text-decoration:none;}
 html{-ms-text-size-adjust:none;-webkit-text-size-adjust:none;text-size-adjust:none;}
-body{line-height:1.5; font-size:14px;}
+body{line-height:1.5; font-size:.28rem;}
 body,button,input,select,textarea{font-family:'helvetica neue',tahoma,'hiragino sans gb',stheiti,'wenquanyi micro hei',\5FAE\8F6F\96C5\9ED1,\5B8B\4F53,sans-serif;}
 b,strong{font-weight:bold;}
 i,em{font-style:normal;}
@@ -49,6 +49,12 @@ button,input,textarea{
 }
 .f40{
     font-size: .40rem;
+}
+.f48{
+    font-size: .48rem;
+}
+.f51{
+    font-size: .51rem;
 }
 .fw4{
     font-weight: 400;

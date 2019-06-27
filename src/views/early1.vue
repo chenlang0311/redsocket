@@ -1,6 +1,6 @@
 <template>
     <div class="early1" id="deg90">
-       <Early2Test />
+       <Early1Test />
     </div>
 </template>
     
