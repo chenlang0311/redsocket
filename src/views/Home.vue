@@ -15,8 +15,9 @@
       <div class="item" @click="to('early4')">Early4-Step9</div>
       <div class="item" @click="to('lettera')">LetterA目录</div>
       <div class="item" @click="to('FictionList')">Fiction目录</div>
-      <!-- <div class="item"></div>
-      <div class="item"></div> -->
+      <div class="item" @click="to('fiction')">Fiction-Test</div>
+      <div class="item" @click="to('EmergentList')">Emergent 目录 </div>
+      <div class="item" @click="to('emergement')">Emergent-Test</div>
     </div>
   </div>
 </template>

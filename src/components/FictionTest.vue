@@ -1,65 +1,65 @@
 <template>
   <div class="fiction-test">
     <div class="sort_num">
-      <img src="../assets/img/early2/biaoqian.png" class="bg_img" />
+      <img src="../assets/img/early2/biaoqian.png" class="bg_img">
       <p class="sort_num_des">1/5</p>
     </div>
-    <img
-      src="../assets/img/alphabet/left.png"
-      alt
-      class="jiantou_next jiantou_last"
-      @click="last"
-    />
-    <img
-      src="../assets/img/alphabet/jiantou-icon.png"
-      alt
-      class="jiantou_next"
-      @click="next"
-    />
+    <img src="../assets/img/alphabet/left.png" alt class="jiantou_next jiantou_last" @click="last">
+    <img src="../assets/img/alphabet/jiantou-icon.png" alt class="jiantou_next" @click="next">
+    <!-- 10 -->
     <div class="early_con_10 wrap_bg" v-if="showState == 10">
       <div class="early_con_10_left">
-          <div class="item_wrap_l item_wrap">
-            <div class="item item_f fw4" v-for="(item,i) in early10List" :key="i">
-                        {{item.f}}
-                    </div>
-          </div>
-            <div class="item_wrap_r item_wrap">
-<div class="item item_s fw4" v-for="(item,i) in early10List" :key="i">
-              {{item.s}}
-          </div>
-            </div>
-           
+        <div class="item_wrap_l item_wrap">
+          <div
+            class="item item_f fw4"
+            :style="{transform: 'rotate('+item.deg+'deg)'}"
+            v-for="(item,i) in early10List"
+            :key="i"
+          >{{item.f}}</div>
+        </div>
+        <div class="item_wrap_r item_wrap">
+          <div
+            class="item item_s fw4"
+            :style="{transform: 'rotate('+item.deg+'deg)'}"
+            v-for="(item,i) in early10List"
+            :key="i"
+          >{{item.s}}</div>
+        </div>
       </div>
       <div class="early_con_10_right">
-          <div class="suc_item">
-              <div class="item_f">every</div>
-              <div class="item_s">thing</div>
-          </div>
+        <div class="suc_item">
+          <div class="item_f">every</div>
+          <div class="item_s">thing</div>
+        </div>
       </div>
     </div>
-
+    <img
+      src="../assets/img/alphabet/shengyin-icon.png"
+      alt
+      class="sy_btn sy_btn10"
+      v-if="showState == 10"
+    >
+    <!-- 20 -->
     <div class="early_con_20 wrap_bg" v-if="showState == 20">
-      <div class="early_con_20_top">
-        <div class="item f30 fw4" v-for="(item, i) in early20ListQ" :key="i">
-          {{ item }}
-        </div>
+      <div class="early_con_20_left">
+        <img class="item" v-for="(item, i) in early20ListQ" :key="i">
       </div>
-      <div class="early_con_20_bottom">
-        <div class="item" v-for="(item, i) in early20ListA" :key="i">
-          <div class="apl f40 fw4 cfff">{{ item.alp}}</div>
-          <div class="num f30">{{ item.num }}</div>
-        </div>
+      <div class="early_con_20_right">
+        <img src="../assets/img/fictionlist/box.png" alt class="top_img">
+        <p class="mid_des f30 fw4 cfff">It’s a tool.</p>
+        <p class="bottom_des f30 fw4 cfff">You can see through it.</p>
       </div>
     </div>
-
-    <div class="early_con wrap_bg" v-if="showState == 30">
-      <div class="early_con_left"></div>
-      <div class="early_con_right f36 fw4">
-        <div>I want to<span class="lv1_left_top_bd"></span> it here by myself.
+    <!-- 30 -->
+    <div class="early_con_30 wrap_bg" v-if="showState == 30">
+      <div>
+        <div class="early_con_30_q f32">Why did dad give James a telescope?</div>
+        <div class="early_con_30_a">
+          <div class="item f28" v-for="(item, i) in eraly30ListA" :key="i">
+            <span class="answer_idx f24">{{ item.idx }}</span>
+            {{item.val}}
+          </div>
         </div>
-        <span class="item f32 fw4" v-for="(item, i) in eraly30ListA" :key="i">
-          {{ item.idx }}.{{item.val}}
-        </span>
       </div>
     </div>
 
@@ -69,21 +69,16 @@
           class="early_next_top-item f28 fwb"
           v-for="(item, i) in early40ListQ"
           :key="i"
-        >
-          {{ i + 1 }}
-        </div>
+        >{{ i + 1 }}</div>
       </div>
       <div class="early_next_bottom">
         <div
-          class="early_next_bottom-item f38 fwb cfff"
+          class="early_next_bottom-item f38  cfff"
           v-for="(item, i) in early40ListA"
           :key="i"
-        >
-          {{ item }}
-        </div>
+        >{{ item }}</div>
       </div>
     </div>
-    <div class="early_next_btn cfff fwb" v-if="showState == 40">提交</div>
   </div>
 </template>
 
@@ -91,62 +86,24 @@
 export default {
   data() {
     return {
-      showState: 10,
+      showState: 40,
       maxState: 40,
-      early10List:[{f:"every",s:"thing"},{f:"birth",s:"day"},{f:"thr",s:"ough"},{f:"out",s:"side"},{f:"tele",s:"scope"}],
-      earlyList: [],
-      earlyListQ: [
-        { f: "h" },
-        { f: "" },
-        { f: "" },
-        { f: "b" },
-        { f: "" },
-        { f: "" },
-        { f: "" }
+      early10List: [
+        { f: "every", s: "thing", deg: 10 + (Math.random() - 1) * 10 },
+        { f: "birth", s: "day", deg: 10 + (Math.random() - 1) * 10 },
+        { f: "thr", s: "ough", deg: 10 + (Math.random() - 1) * 10 },
+        { f: "out", s: "side", deg: 10 + (Math.random() - 1) * 10 },
+        { f: "tele", s: "scope", deg: 10 + (Math.random() - 1) * 10 }
       ],
-      earlyListA: [
-        { f: "t" },
-        { f: "a" },
-        { f: "d" },
-        { f: "o" },
-        { f: "i" },
-        { f: "l" },
-        { f: "l" }
-      ],
-      early20ListQ: [
-        "a=1",
-        "w=2",
-        "e=3",
-        "o=4",
-        "s=5",
-        "d=6",
-        "f=7",
-        "i=8",
-        "u=9",
-        "h=10",
-        "c=11",
-        "p=12",
-        "r=13",
-        "d=14",
-        "l=15",
-        "n=16",
-        "t=17"
-      ],
-      early20ListA: [
-        { num: 10, alp: "faw" },
-        { num: 3, alp: "" },
-        { num: 15, alp: "" },
-        { num: 12, alp: "" }
-      ],
+      early20ListQ: ["a=1", "w=2", "e=3", "o=4"],
       eraly30ListA: [
-        { idx: "A", val: "catch" },
-        { idx: "B", val: "hit" },
-        { idx: "C", val: "sail" },
-        { idx: "D", val: "build" }
+        { idx: "A", val: "James like it." },
+        { idx: "B", val: "It’s James birthday." },
+        { idx: "C", val: "He wants to be a dinosaur hunter." },
+        { idx: "D", val: "It made everything big." }
       ],
-      early40ListQ:[1,2,3,4,5],
-      early40ListA:[{},{},{},{},{},{}],
-
+      early40ListQ: [1, 2, 3],
+      early40ListA: ["look like","The fish","a whale"]
     };
   },
   methods: {
@@ -172,31 +129,22 @@ export default {
   background-size: 100% 100%;
   position: relative;
   overflow: hidden;
+  .sy_btn {
+    height: 1.1rem;
+    width: 1.1rem;
+    margin: 0 auto;
+  }
+  .sy_btn10 {
+    margin-top: 0.21rem;
+  }
   .wrap_bg {
-    background: rgba(255, 255, 255, 1);
-    border: 0.14rem solid rgba(247, 247, 247, 1);
+    background: rgba(247, 247, 247, 1);
+    border: 0.14rem solid rgba(255, 255, 255, 1);
     box-shadow: 0 0.05rem 0 0 rgba(215, 248, 251, 0.65);
     border-radius: 0.49rem;
     display: flex;
     align-items: center;
     flex-direction: column;
-  }
-  .dianchi_img {
-    height: 1.06rem;
-    width: 0.58rem;
-    position: absolute;
-    right: 0.57rem;
-    top: 4.6rem;
-  }
-  .early_next_btn {
-    width: 2.1rem;
-    height: 0.55rem;
-    background: rgba(255, 99, 83, 1);
-    box-shadow: 0px 0.04rem 0px 0px rgba(238, 73, 56, 1);
-    border-radius: 0.1rem;
-    text-align: center;
-    line-height: 0.55rem;
-    margin: 0.19rem auto 0;
   }
   .lv1_left_top_bd {
     border-bottom: 1px solid #333;
@@ -236,150 +184,172 @@ export default {
   .jiantou_last {
     left: 0.3rem;
   }
-  .early_con_10{
+  .early_con_10 {
     width: 10.23rem;
     height: 3.81rem;
     margin: 0.86rem 0 0 1.32rem;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    &_left{
-        margin-left: .39rem;
+    &_left {
+      margin-left: 0.39rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 5.77rem;
+      .item_wrap {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        width: 5.77rem;
-        .item_wrap{
-display: flex;
-            flex-wrap: wrap;
-           justify-content: center;
-        }
-        .item_wrap_l{
-            width: 3rem; 
-        }
-        .item_wrap_r{
-            width: 2.77rem;
-        }
-        
-        
+      }
+      .item_wrap_l {
+        width: 3rem;
+      }
+      .item_wrap_r {
+        width: 2.77rem;
+      }
     }
-    .item{
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.18rem;
+      margin-right: 0.1rem;
+    }
+    .item_f {
+      background: url("../assets/img/fictionlist/left.png") no-repeat;
+      background-size: 100% 100%;
+      height: 0.62rem;
+      width: 1.39rem;
+    }
+    .item_s {
+      background: url("../assets/img/fictionlist/right.png") no-repeat;
+      background-size: 100% 100%;
+      height: 0.62rem;
+      width: 1.22rem;
+    }
+    &_right {
+      width: 3.05rem;
+      height: 3.2rem;
+      border: 0.02rem solid rgba(0, 193, 183, 1);
+      margin-right: 0.39rem;
+      padding-top: 0.2rem;
+      .suc_item {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        margin-left: 0.16rem;
+        .item_f {
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
-    .item_f{
-            background: url("../assets/img/fictionlist/left.png") no-repeat;
-            background-size: 100% 100%;
-            height: .76rem;
-            width: 1.43rem;
+        .item_s {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          left: -0.16rem;
         }
-        .item_s{
-            background: url("../assets/img/fictionlist/right.png") no-repeat;
-            background-size: 100% 100%;
-            height: .97rem;
-            width: 1.36rem;
-        }
-    &_right{
-        width:3.05rem;
-        height:3.20rem;
-        border:.02rem solid rgba(0,193,183,1);
-        margin-right: .39rem;
-        .suc_item{
-            display: flex;
-            .item_f{
-                // transform: rotate(5deg)
-            }
-            .item_s{
-                //  transform: rotate(-20deg)
-            }
-        }
+      }
     }
   }
 
   .early_con_20 {
-    width: 9.9rem;
-    height: 4.68rem;
-    margin: 0.76rem auto 0;
-    &_top {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 0.45rem;
-      width: 8rem;
-      .item {
-        margin-right: 0.32rem;
-      }
-    }
-    &_bottom {
-      margin-top: 0.8rem;
+    width: 10.42rem;
+    height: 4.44rem;
+    margin: 0.87rem auto 0;
+    align-items: flex-start;
+    flex-direction: row;
+    &_left {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 8.3rem;
+      flex-wrap: wrap;
+      width: 4.7rem;
+      margin-left: 0.7rem;
+      margin-top: 0.37rem;
       .item {
-        text-align: center;
+        width: 2.2rem;
+        height: 1.56rem;
+        background-color: #ddd;
+        margin-bottom: 0.3rem;
       }
-      .apl {
-        width: 1.8rem;
-        height: 1.2rem;
-        background: rgba(92, 126, 109, 1);
-        border-radius: 0.16rem;
-        text-align: center;
-        line-height: 1.2rem;
+    }
+    &_right {
+      margin-left: 0.64rem;
+      .top_img {
+        width: 2.45rem;
+        height: 2.11rem;
+        margin-left: 0.35rem;
+        margin-top: 0.3rem;
       }
-      .num {
-        width: 0.72rem;
-        height: 0.47rem;
-        background: rgba(255, 204, 0, 1);
-        border-radius: 0.07rem;
+      .mid_des,
+      .bottom_des {
+        height: 0.48rem;
         text-align: center;
-        line-height: 0.47rem;
-        margin: 0.21rem auto 0;
+        line-height: 0.48rem;
+        border-radius: 0.1rem;
+        background: rgba(0, 193, 183, 1);
+      }
+      .mid_des {
+        width: 1.93rem;
+        margin-top: 0.39rem;
+        margin-left: 0.84rem;
+      }
+      .bottom_des {
+        width: 3.6rem;
+        margin-top: 0.14rem;
       }
     }
   }
 
-  .early_con {
-    width: 9.9rem;
-    height: 4.63rem;
-    margin: 0.76rem auto 0;
-    flex-direction: row;
-    &_left{
-        height: 1.95rem;
-        width: 2.64rem;
-        background-color: #f4f4f4;
-        border-radius: .14rem;
-        overflow: hidden;
-        margin-left: .44rem;
+  .early_con_30 {
+    width: 9.48rem;
+    height: 4.75rem;
+    margin: 0.7rem auto 0;
+    &_q {
+      margin-top: 0.8rem;
+      // margin-left: 1.75rem;
+      line-height: 0.21rem;
     }
-    &_right{
-        margin-left: .60rem;
-        text-align: left;
-        .item{
-            display: inline-block;
-            margin-top: .45rem;
-            line-height: 1;
-            margin-right: .49rem;
-        }
+    &_a {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      margin-top: 0.39rem;
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.3rem;
+    }
+    .answer_idx {
+      width: 0.33rem;
+      height: 0.33rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 204, 0, 1);
+      margin-right: 0.15rem;
     }
   }
 
   .early_next {
-    width: 10.63rem;
-    height: 4.33rem;
-    margin: 0.69rem auto 0;
+    width: 9.48rem;
+    height: 4.75rem;
+    margin: 0.70rem auto 0;
     &_top {
-      width: 8.74rem;
-      height: 1.2rem;
+      width: 7.92rem;
+      height: .91rem;
       background: rgba(247, 247, 247, 1);
       border: 0.02rem dashed rgba(204, 204, 204, 1);
       border-radius: 0.06rem;
       display: flex;
       align-items: center;
       justify-content: space-around;
-      margin-top: 0.26rem;
+      margin-top: 1.27rem;
       &-item {
         height: 0.38rem;
         width: 0.38rem;
@@ -391,18 +361,18 @@ display: flex;
     &_bottom {
       display: flex;
       align-items: center;
-      justify-content:space-between;
-      width: 9.84rem;
-      height: 1.72rem;
-      background: rgba(247, 247, 247, 1);
-      border: 0.02rem dashed rgba(204, 204, 204, 1);
-      margin: 0.44rem auto 0;
-      padding: 0 .37rem;
+      justify-content: space-between;
+      width: 7.92rem;
+      height: .76rem;
+      margin: 0.46rem auto 0;
+      padding: 0 0.42rem;
       &-item {
-        height: 1.36rem;
-        width: 1.36rem;
+        height: .76rem;
+        width: 2.05rem;
         border-radius: 0.06rem;
-        background-color: #fff;
+        background-color: #00C1B7;
+        line-height: .76rem;
+        text-align: center;
       }
     }
   }

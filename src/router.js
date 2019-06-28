@@ -80,6 +80,16 @@ export default new Router({
       name: 'Early4List',
       component: () => import(/* webpackChunkName: "about" */ './views/Early4List.vue')
     },
+    {//14个目录
+      path: '/EmergentList',
+      name: 'EmergentList',
+      component: () => import(/* webpackChunkName: "about" */ './views/EmergentList.vue')
+    },
+    {//14个目录
+      path: '/emergement',
+      name: 'emergement',
+      component: () => import(/* webpackChunkName: "about" */ './views/emergement.vue')
+    },
   ]
 });
 
