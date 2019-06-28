@@ -26,6 +26,11 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/Achievement.vue')
     },
     {//14个目录
+      path: '/fiction',
+      name: 'fiction',
+      component: () => import(/* webpackChunkName: "about" */ './views/fiction.vue')
+    },
+    {//14个目录
       path: '/fictionlist',
       name: 'fictionlist',
       component: () => import(/* webpackChunkName: "about" */ './views/FictionList.vue')
@@ -49,6 +54,11 @@ export default new Router({
       path: '/early2',
       name: 'early2',
       component: () => import(/* webpackChunkName: "about" */ './views/early2.vue')
+    },
+    {//14个目录
+      path: '/Early2List',
+      name: 'Early2List',
+      component: () => import(/* webpackChunkName: "about" */ './views/Early2List.vue')
     },
     {//14个目录
       path: '/Early3List',

@@ -1,7 +1,7 @@
 <template>
-  <div class="foctionlist" id="deg90">
+  <div class="early2-list" id="deg90">
     <div class="fictlist">
-      <div class="list_top">
+       <div class="list_top">
         <div
           class="list_top-item"
           :class="'list_top-item' + i"
@@ -38,7 +38,7 @@
           />
         </div>
       </div>
-      <img src="../assets/img/early4/hengtiao.png" alt="" class="top_ht" />
+      <img src="../assets/img/fictionlist/list/hengtiao.png" alt="" class="top_ht" />
       <div class="list_top list_bottom">
         <div
           class="list_top-item"
@@ -55,16 +55,16 @@
           :key="i"
         >
           <p class="title f22 fwb">Step{{ item.id }}</p>
-          <p class="name f24" :class="'name' + (i + 7)">{{ item.name }}</p>
+          <p class="name f24" :class="'name' + (i + 6)">{{ item.name }}</p>
           <img
             :src="item.src"
             alt=""
             class="item_img"
-            :class="'item_img' + (i + 7)"
+            :class="'item_img' + (i + 6)"
           />
         </div>
       </div>
-      <img src="../assets/img/early4/hengtiao.png" alt="" class="top_ht" />
+      <img src="../assets/img/fictionlist/list/hengtiao.png" alt="" class="top_ht" />
     </div>
   </div>
 </template>
@@ -72,8 +72,69 @@
 <script>
 export default {
   data() {
-    return {
-     
+    return { 
+        bottomList: [
+        {
+          id: 7,
+          top: false,
+          name: "I can  Choose",
+          src: require("../assets/img/fictionlist/list/7.png"),
+          bc: require("../assets/img/fictionlist/7.png"),
+          height: "1.72",
+          width: "1.37",
+          mr: ".35"
+        },
+        {
+          id: 8,
+          top: false,
+          name: "True  or  False",
+          src: require("../assets/img/fictionlist/list/8.png"),
+          bc: require("../assets/img/fictionlist/8.png"),
+          height: "1.74",
+          width: "1.38",
+          mr: ".35"
+        },
+        {
+          id: 9,
+          top: false,
+          name: "Decode",
+          src: require("../assets/img/fictionlist/list/9.png"),
+          bc: require("../assets/img/fictionlist/9.png"),
+          height: "1.74",
+          width: "1.38",
+          mr: ".35"
+        },
+        {
+          id: 10,
+          top: false,
+          name: "Card  Game",
+          src: require("../assets/img/fictionlist/list/10.png"),
+          bc: require("../assets/img/fictionlist/10.png"),
+          height: "1.74",
+          width: "1.38",
+          mr: ".35"
+        },
+        {
+          id: 11,
+          top: false,
+          name: "Zoom!  Zoom!  Zoom!",
+          src: require("../assets/img/fictionlist/list/11.png"),
+          bc: require("../assets/img/fictionlist/11.png"),
+          height: "1.74",
+          width: "1.38",
+          mr: ".35"
+        },
+        {
+          id: 12,
+          top: false,
+          name: "My  Achievement",
+          src: require("../assets/img/fictionlist/list/12.png"),
+          bc: require("../assets/img/fictionlist/12.png"),
+          height: "1.74",
+          width: "1.38",
+          mr: "0"
+        }
+      ],
       topList: [
         {
           id: 1,
@@ -108,14 +169,13 @@ export default {
         {
           id: 4,
           top: true,
-          name: "Word  Puzzle",
+          name: "Sight  Words",
           src: require("../assets/img/fictionlist/list/4.png"),
           bc: require("../assets/img/fictionlist/4.png"),
           height: "1.75",
           width: "1.43",
           mr: ".30"
-        },
-        {
+        },{
           id: 5,
           top: false,
           name: "Word  Search",
@@ -133,93 +193,9 @@ export default {
           bc: require("../assets/img/fictionlist/6.png"),
           height: "1.72",
           width: "1.37",
-          mr: "0.37"
-        },
-        {
-          id: 7,
-          top: false,
-          name: "Mystery  Box",
-          src: require("../assets/img/fictionlist/07.png"),
-          bc: require("../assets/img/fictionlist/7.png"),
-          height: "1.72",
-          width: "1.37",
           mr: "0"
-        }
-      ],
-       bottomList: [
-          
-        {
-          id: 8,
-          top: false,
-          name: "True  or  False",
-          src: require("../assets/img/fictionlist/list/8.png"),
-          bc: require("../assets/img/fictionlist/8.png"),
-          height: "1.74",
-          width: "1.38",
-          mr: ".35"
         },
-        {
-          id: 9,
-          top: false,
-          name: "Decode",
-          src: require("../assets/img/fictionlist/list/9.png"),
-          bc: require("../assets/img/fictionlist/9.png"),
-          height: "1.74",
-          width: "1.38",
-          mr: ".35"
-        },
-        {
-          id: 10,
-          top: false,
-          name: "What is  Missing",
-          src: require("../assets/img/early4/11.png"),
-          bc: require("../assets/img/fictionlist/10.png"),
-          height: "1.74",
-          width: "1.38",
-          mr: ".35"
-        },
-        {
-          id: 11,
-          top: false,
-          name: "Put it in  Order",
-          src: require("../assets/img/early3/10.png"),
-          bc: require("../assets/img/fictionlist/11.png"),
-          height: "1.74",
-          width: "1.38",
-          mr: ".31"
-        },
-         {
-          id: 12,
-          top: false,
-          name: "Little Quiz",
-          src: require("../assets/img/early3/11.png"),
-          bc: require("../assets/img/fictionlist/12.png"),
-          height: "1.72",
-          width: "1.37",
-          mr: ".35"
-        },
-        {
-          id: 13,
-          top: false,
-          name: "Sentence  Builder",
-          src: require("../assets/img/fictionlist/013.png"),
-          bc: require("../assets/img/fictionlist/13.png"),
-          height: "1.74",
-          width: "1.48",
-          mr: ".30"
-        },
-        {
-          id: 14,
-          top: false,
-          name: "I can  speak",
-          src: require("../assets/img/lettera/2.png"),
-          bc: require("../assets/img/fictionlist/14.png"),
-          height: "1.74",
-          width: "1.38",
-          mr: "0"
-        }
-      ],
-    };
+      ]};
   },
   beforeRouteEnter(to, from, next) {
     next(vm => {
@@ -231,20 +207,20 @@ export default {
 </script>
 
 <style lang="scss">
-.foctionlist {
-  height: 100%;
-  width: 100%;
-  .fictlist {
-    background: url("../assets/img/fictionlist/bc.png") no-repeat;
-    background-size: 100% 100%;
+.early2-list{
     height: 100%;
     width: 100%;
-    overflow: hidden;
-    .top_ht {
+    .fictlist{
+        background: url("../assets/img/fictionlist/list/bc.png") no-repeat;
+        background-size: 100% 100%;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        .top_ht {
       height: 0.55rem;
-      width: 12.93rem;
+      width: 11.20rem;
       margin-top: -0.12rem;
-      margin-left: 0.36rem;
+      margin-left: 1.20rem;
     }
     .list_top {
       display: flex;
@@ -266,36 +242,34 @@ export default {
           margin-top: 0.18rem;
           color: #877249;
           font-weight: normal;
-          &1 {
-            margin-top: 0.1rem;
+          
+          &1{
+              margin-top: .10rem;
           }
           &2 {
             margin-top: 0.1rem;
           }
-          &5 {
-            width: 80%;
+          &5{
+              width: 80%;
           }
-
-          &0,
-          &8,
-          &11,
-          &12{
-            width: 100%;
+      
+           &0,&8,&11{
+              width: 100%;
           }
         }
         .item_img {
           height: 0.53rem;
           width: 0.61rem;
           margin: 0.12rem auto 0;
-          &0 {
-            height: 0.37rem;
-            width: 0.73rem;
-            margin-top: 0.26rem;
+          &0{
+              height: .37rem;
+              width: .73rem; 
+              margin-top: .26rem;
           }
           &1 {
-            height: 0.45rem;
-            width: 0.49rem;
-            margin-top: 0.06rem;
+              height: .45rem;
+            width: .49rem;
+            margin-top: .06rem;
           }
           &2 {
             height: 0.45rem;
@@ -303,73 +277,79 @@ export default {
             margin-top: 0.18rem;
           }
           &3 {
-            height: 0.51rem;
-            width: 0.51rem;
-            margin-top: 0.12rem;
+            height: .51rem;
+              width: .51rem;
+              margin-top: .12rem;
           }
-          &4 {
-            height: 0.53rem;
-            width: 0.53rem;
-            margin-top: 0.1rem;
+          &4{
+              height: .53rem;
+              width: .53rem;
+              margin-top: .10rem;
           }
-          &5 {
-            height: 0.51rem;
-            width: 0.48rem;
-            margin-top: 0.1rem;
+          &5{
+              height: .51rem;
+              width: .48rem;
+              margin-top: .10rem;
           }
-         &6 {
-          height: 0.63rem;
-          width: 0.53rem;
-          margin-top: 0rem;
-          margin-left: .52rem;
-        }
-        &7{
-          height: 0.32rem;
-          width: 0.63rem;
-          margin-top: .10rem;
-        }
-        
-        &8 {
-          height: 0.56rem;
-          width: 0.43rem;
-          margin-top: 0.22rem;
-        }
-        
-        &9 {
-          height: 0.45rem;
-          width: 0.49rem;
-          margin-top: 0.05rem;
-        }
-        &10 {
-          height: 0.34rem;
-          width: 0.39rem;
-          margin-top: .05rem;
-        }
-        &11 {
-          height: 0.50rem;
-          width: 0.50rem;
-          margin-top: .30rem;
-        }
-        &12 {
-          height: 0.51rem;
-          width: 0.51rem;
-          margin-top: 0.10rem;
-        }
-         &13 {
-          height: 0.63rem;
-          width: 0.53rem;
-          margin-top: 0rem;
-          margin-left: .49rem;
-        }
+          &6{
+              height: .41rem;
+              width: .51rem;
+              margin-top: .18rem;
+          }
+          &7{
+              height: .32rem;
+              width: .63rem;
+              margin-top: .13rem;
+          }
+          &8{
+              height: .56rem;
+              width: .43rem;
+              margin-top: .30rem;
+          }
+          &9{
+              height: .57rem;
+              width: .57rem;
+              margin-top: .10rem;
+          }
+          &10{
+              height: .40rem;
+              width: .40rem;
+              margin-top: .10rem;
+          }
+          &11{
+              height: .44rem;
+              width: .49rem;
+              margin-top: .23rem;
+          }
         }
       }
     }
     .list_bottom {
-      margin-top: 0.20rem;
+      margin-top: 0.26rem;
       .name {
+        &4 {
+        }
+        &7 {
+          width: 100%;
+        }
       }
       .item_img {
-        
+        &4 {
+          height: 0.48rem;
+          width: 0.45rem;
+        }
+        &5 {
+          height: 0.5rem;
+          width: 0.5rem;
+        }
+        &6 {
+          height: 0.47rem;
+          width: 0.48rem;
+        }
+        &7 {
+          height: 0.44rem;
+          width: 0.49rem;
+        }
       }
     }
     .biaoqian1_img {
@@ -386,6 +366,6 @@ export default {
       height: 0.55rem;
       width: 0.64rem;
     }
-  }
+    }
 }
 </style>
