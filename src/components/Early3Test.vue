@@ -82,7 +82,7 @@ this.showState += 10;
   height: 100%;
   width: 100%;
   background: url("../assets/img/early3/bc.png") no-repeat;
-  background-size: contain;
+  background-size: 100% 100%;
   position: relative;
   overflow: hidden;
   .dianchi_img{

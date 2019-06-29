@@ -90,6 +90,16 @@ export default new Router({
       name: 'emergement',
       component: () => import(/* webpackChunkName: "about" */ './views/emergement.vue')
     },
+    {//14个目录
+      path: '/PreReadingList',
+      name: 'PreReadingList',
+      component: () => import(/* webpackChunkName: "about" */ './views/PreReadingList.vue')
+    },
+    {//14个目录
+      path: '/PreReading',
+      name: 'PreReading',
+      component: () => import(/* webpackChunkName: "about" */ './views/PreReading.vue')
+    },
   ]
 });
 

@@ -18,6 +18,8 @@
       <div class="item" @click="to('fiction')">Fiction-Test</div>
       <div class="item" @click="to('EmergentList')">Emergent 目录 </div>
       <div class="item" @click="to('emergement')">Emergent-Test</div>
+      <div class="item" @click="to('PreReadingList')">PreReading 目录 </div>
+      <div class="item" @click="to('PreReading')">PreReading-Test</div>
     </div>
   </div>
 </template>
