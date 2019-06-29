@@ -14,6 +14,7 @@
       <div class="item" @click="to('Early4List')">Early4目录</div>
       <div class="item" @click="to('early4')">Early4-Step9</div>
       <div class="item" @click="to('lettera')">LetterA目录</div>
+      <div class="item" @click="to('LetteraTest')">Lettera-Test</div>
       <div class="item" @click="to('FictionList')">Fiction目录</div>
       <div class="item" @click="to('fiction')">Fiction-Test</div>
       <div class="item" @click="to('EmergentList')">Emergent 目录 </div>

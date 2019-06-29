@@ -100,6 +100,11 @@ export default new Router({
       name: 'PreReading',
       component: () => import(/* webpackChunkName: "about" */ './views/PreReading.vue')
     },
+    {//14个目录
+      path: '/LetteraTest',
+      name: 'LetteraTest',
+      component: () => import(/* webpackChunkName: "about" */ './views/LetteraTest.vue')
+    },
   ]
 });
 
