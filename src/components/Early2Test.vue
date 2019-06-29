@@ -167,7 +167,7 @@ export default {
       justify-content: center;
         &_item{
             background: url("../assets/img/early2/button.png") no-repeat;
-            background-size: contain;
+            background-size: 100% 100%;
             height: .59rem;
             width: 2.10rem;
             text-align: center;

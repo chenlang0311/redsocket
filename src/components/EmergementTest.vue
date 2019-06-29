@@ -1,6 +1,6 @@
 <template>
   <div class="emerge-test">
-    <div class="sort_num">
+    <div class="sort_num" v-if="showState==10||showState==20||showState==30||showState==40">
       <img src="../assets/img/early2/biaoqian.png" class="bg_img">
       <p class="sort_num_des">1/5</p>
     </div>
@@ -27,6 +27,11 @@
         </div>
       </div>
     </div>
+    <img
+      src="../assets/img/alphabet/shengyin-icon.png"
+      class="sy_icon"
+      v-if="showState == 30||showState == 10"
+    >
     <div class="early_con_20" v-if="showState == 20">
       <div class="early_con_20_left wrap_bg">
         <div class="con_q">
@@ -61,32 +66,63 @@
         </div>
       </div>
     </div>
-    <!-- <div class="early_next wrap_bg" v-if="showState == 40">
-      <div class="early_next_top">
-        <div
-          class="early_next_top-item f28 fwb"
-          v-for="(item, i) in early40ListQ"
-          :key="i"
-        >{{ i + 1 }}</div>
+    <div class="early_con_50" v-if="showState == 50"></div>
+    <div class="btn_group" v-if="showState == 50">
+      <div class="btn_group_item cfff fwb">
+        <img src="../assets/img/emergent/luyin.png" alt class="ly_img">
+        Record
       </div>
-      <div class="early_next_bottom">
-        <div
-          class="early_next_bottom-item f38 fwb cfff"
-          v-for="(item, i) in early40ListA"
-          :key="i"
-        >{{ item }}</div>
+      <div class="btn_group_item cfff fwb sy_btn">
+        <img src="../assets/img/emergent/shengyin.png" alt class="sy_img">
+        Listen
       </div>
     </div>
-    <div class="early_next_btn cfff fwb" v-if="showState == 40">提交</div>-->
+    <div class="early_con_60" v-if="showState == 60">
+      <div class="card_wrap">
+        <img
+          src="../assets/img/emergent/card.png"
+          alt
+          class="card_img"
+          v-for="(item,i) in eraly60ListA"
+          :key="i"
+        >
+      </div>
+    </div>
+    <div class="early_con_60" v-if="showState == 70">
+      <div class="card_wrap">
+        <img
+          :src="item.src"
+          alt
+          class="card_img card_item"
+          v-for="(item,i) in eraly70ListQ"
+          :key="i"
+        >
+        <div class="card_item f30 fw4" v-for="(item,i) in eraly70ListQ"   :key="i+0.1">
+            {{item.name}}
+        </div>
+      </div>
+    </div>
+    <div class="early_con_80" v-if="showState == 80">
+        <div class="con_diago">
+            <p class="diago_des f32 fw5">已生成完整音频！</p>
+            <div class="btn_g ">
+                <div class="btn_i cfff f32">一键分享</div>
+                <div class="btn_i cfff f32">下载</div>
+            </div>
+        </div>
+        <img src="../assets/img/emergent/xx.png" alt="" class="xx_img">
+    </div>
+    <img src="../assets/img/emergent/dianchi.png" alt class="dc_img" v-if="showState == 60||showState == 70">
   </div>
+  
 </template>
 
 <script>
 export default {
   data() {
     return {
-      showState: 40,
-      maxState: 60,
+      showState: 80,
+      maxState: 80,
       earlyList: [],
       eraly10List: ["m", "b", "a", "s"],
       eraly20ListQ: ["am", "said", "the", "big"],
@@ -177,7 +213,9 @@ export default {
         { num: 15, alp: "" },
         { num: 12, alp: "" }
       ],
-      eraly40ListA: [{ idx: "1", val: "bird" }, { idx: "2", val: "bird" }]
+      eraly40ListA: [{ idx: "1", val: "bird" }, { idx: "2", val: "bird" }],
+      eraly60ListA: [1, 2, 3, 4, 5, 6, 7, 8],
+      eraly70ListQ:[{name:"kangaroo",src:""},{name:"gorilla",src:""},{name:"baer",src:""},{name:"horse",src:""}]
     };
   },
   methods: {
@@ -203,6 +241,13 @@ export default {
   background-size: 100% 100%;
   position: relative;
   overflow: hidden;
+  .dc_img {
+    height: 1.06rem;
+    width: 0.61rem;
+    position: absolute;
+    top: 0.37rem;
+    right: 0.25rem;
+  }
   .wrap_bg {
     background: rgba(247, 247, 247, 1);
     border: 0.14rem solid rgba(255, 255, 255, 1);
@@ -212,22 +257,43 @@ export default {
     align-items: center;
     flex-direction: column;
   }
-  .dianchi_img {
-    height: 1.06rem;
-    width: 0.58rem;
-    position: absolute;
-    right: 0.57rem;
-    top: 4.6rem;
+  .sy_icon {
+    height: 1.1rem;
+    width: 1.1rem;
+    margin: 0.22rem auto 0;
   }
-  .early_next_btn {
-    width: 2.1rem;
-    height: 0.55rem;
-    background: rgba(255, 99, 83, 1);
-    box-shadow: 0px 0.04rem 0px 0px rgba(238, 73, 56, 1);
-    border-radius: 0.1rem;
-    text-align: center;
-    line-height: 0.55rem;
-    margin: 0.19rem auto 0;
+  .btn_group {
+    margin: 0.25rem auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &_item {
+      width: 2.1rem;
+      height: 0.59rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url("../assets/img/emergent/button3.png") no-repeat;
+      background-size: 100% 100%;
+      border-radius: 0.1rem;
+      .ly_img {
+        height: 0.39rem;
+        width: 0.27rem;
+        margin-right: 0.19rem;
+      }
+      .sy_img {
+        height: 0.38rem;
+        width: 0.38rem;
+        margin-right: 0.18rem;
+      }
+    }
+    .sy_btn {
+      background: url("../assets/img/emergent/button4.png") no-repeat;
+      background-size: 100% 100%;
+      background-color: none;
+      box-shadow: none;
+      margin-left: 0.3rem;
+    }
   }
   .lv1_left_top_bd {
     border-bottom: 1px solid #333;
@@ -416,10 +482,10 @@ export default {
       height: 3.36rem;
       width: 6.52rem;
       align-items: flex-start;
-      padding-top: .65rem;
-      padding-left: .54rem;
+      padding-top: 0.65rem;
+      padding-left: 0.54rem;
       .q_des {
-          margin-bottom: .30rem;
+        margin-bottom: 0.3rem;
         .lv1_left_top_bd {
           border-bottom: 1px solid #333;
           width: 1.04rem;
@@ -430,7 +496,7 @@ export default {
       .q_item {
         display: flex;
         align-items: center;
-        margin-bottom:.28rem; 
+        margin-bottom: 0.28rem;
         .answer_idx {
           width: 0.33rem;
           height: 0.33rem;
@@ -444,70 +510,78 @@ export default {
       }
     }
   }
-  .early_con {
-    width: 9.9rem;
-    height: 4.63rem;
-    margin: 0.76rem auto 0;
-    flex-direction: row;
-    &_left {
-      height: 1.95rem;
-      width: 2.64rem;
-      background-color: #f4f4f4;
-      border-radius: 0.14rem;
-      overflow: hidden;
-      margin-left: 0.44rem;
-    }
-    &_right {
-      margin-left: 0.6rem;
-      text-align: left;
-      .item {
-        display: inline-block;
-        margin-top: 0.45rem;
-        line-height: 1;
-        margin-right: 0.49rem;
+  .early_con_50 {
+    height: 5.01rem;
+    width: 10.6rem;
+    background-color: #fff;
+    margin: 0.21rem auto 0;
+  }
+  .early_con_60 {
+    margin-top: 0.67rem;
+    .card_wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-left: 2.76rem;
+      margin-right: 3.03rem;
+      .card_img {
+        height: 2.34rem;
+        width: 1.83rem;
+        margin-bottom: 0.21rem;
+      }
+      .card_item {
+        width: 1.82rem;
+        height: 2.28rem;
+        background: rgba(255, 255, 255, 1);
+        border: 0.12rem solid rgba(245, 245, 245, 1);
+        border-radius: 0.16rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }
+  .early_con_80{
+      height: 100%;
+        width: 100%;
+        background:rgba(0,0,0,.6);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .con_diago{
+            height: 4.10rem;
+            width: 4.44rem;
+            background: url("../assets/img/emergent/tanchuang.png") no-repeat;
+            background-size: 100% 100%;
+            margin-top: .76rem;
+            .diago_des{
+                margin-top: 2.38rem;
+                line-height: 1;
+            }
+            .btn_g{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: .37rem;
+                margin-left: .30rem;
+                .btn_i{
+                    background: url("../assets/img/emergent/button5.png") no-repeat;
+                    background-size: 100% 100%;
+                    height: .73rem;
+                    width: 1.80rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: .22rem;
+                }
+            }
 
-  .early_next {
-    width: 10.63rem;
-    height: 4.33rem;
-    margin: 0.69rem auto 0;
-    &_top {
-      width: 8.74rem;
-      height: 1.2rem;
-      background: rgba(247, 247, 247, 1);
-      border: 0.02rem dashed rgba(204, 204, 204, 1);
-      border-radius: 0.06rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      margin-top: 0.26rem;
-      &-item {
-        height: 0.38rem;
-        width: 0.38rem;
-        border: 0.02rem solid rgba(51, 51, 51, 1);
-        border-radius: 50%;
-        line-height: 0.38rem;
-      }
-    }
-    &_bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 9.84rem;
-      height: 1.72rem;
-      background: rgba(247, 247, 247, 1);
-      border: 0.02rem dashed rgba(204, 204, 204, 1);
-      margin: 0.44rem auto 0;
-      padding: 0 0.37rem;
-      &-item {
-        height: 1.36rem;
-        width: 1.36rem;
-        border-radius: 0.06rem;
-        background-color: #fff;
-      }
-    }
+        }
+        .xx_img{
+            height: .58rem;
+            width: .58rem;
+            margin: .21rem auto 0;
+        }
   }
 }
 </style>
