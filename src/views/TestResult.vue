@@ -1,5 +1,5 @@
 <template>
-  <div class="test_result_page">
+  <div class="test_result_page" id="deg90">
     <img src="../assets/img/alphabet/BC3.png" class="bc_img">
     <div class="wrap" :class="showDes?'wrap_has':''">
       <div class="wrap_title">
@@ -54,7 +54,13 @@ export default {
     return {
       showDes: false
     };
-  }
+  },
+    beforeRouteEnter(to, from, next) {
+  next(vm => {
+    //触发resize强制横屏
+    vm.clCheckScrenn();
+  });
+},
 };
 </script>
 
