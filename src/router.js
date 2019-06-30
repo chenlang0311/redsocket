@@ -105,6 +105,11 @@ export default new Router({
       name: 'LetteraTest',
       component: () => import(/* webpackChunkName: "about" */ './views/LetteraTest.vue')
     },
+    {//14个目录
+      path: '/TestResult',
+      name: 'TestResult',
+      component: () => import(/* webpackChunkName: "about" */ './views/TestResult.vue')
+    },
   ]
 });
 

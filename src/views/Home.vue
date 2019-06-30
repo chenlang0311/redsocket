@@ -21,6 +21,8 @@
       <div class="item" @click="to('emergement')">Emergent-Test</div>
       <div class="item" @click="to('PreReadingList')">PreReading 目录 </div>
       <div class="item" @click="to('PreReading')">PreReading-Test</div>
+      <div class="item" @click="to('TestResult')">TestResult</div>
+      
     </div>
   </div>
 </template>
