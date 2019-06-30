@@ -104,7 +104,8 @@
       </div>
       <div class="game_result" v-if="showState == 60&&hasResult">
         <div class="error_diago fwb" v-if="false">不对哦，宝宝!</div>
-        <img src="../assets/img/lettera-test/right_diago.png" alt class="right_result">
+        <div class="right_result" style="padding-left:3.27rem">真棒！</div>
+        <!-- <img src="../assets/img/lettera-test/right_diago.png" alt class="right_result"> -->
         <img src="../assets/img/lettera-test/close.png" alt class="close_result_img">
       </div>
       <div class="lettea_test_40 wrap_bg" v-if="showState == 40||showState == 50">
@@ -147,9 +148,30 @@
         </div>
         <img src="../assets/img/alphabet/luyin.png" alt class="sy_btn">
       </div>
+      <div class="lettea_test_80">
+        <div class="lettea_test_80_q">
+          <img
+            :src="item.src"
+            alt
+            v-for="(item,i) in Test80Qa"
+            :key="i"
+            class="q_q_img"
+            :class="'q_q_img'+(i+1)"
+          >
+        </div>
+        <div class="lettea_test_80_a">
+          <img src="../assets/img/lettera-test/a_big.png" alt class="q_a_img">
+        </div>
+      </div>
+      <div class="game_result" v-if="showState==80&&showResult==80">
+           <div class="error_diago fwb" >拼图失败！</div>
+           <div class="right_result" v-if="false">拼图成功！</div>
+        <img src="../assets/img/lettera-test/close.png" alt class="close_result_img">
+      </div>
       <div class="early_con_40" v-if="showState == false">
         <div class="early_con_40_left wrap_bg">
           <img src alt class="q_img">
+
         </div>
         <div class="early_con_40_right wrap_bg">
           <div class="q_des f36 fw4">
@@ -196,7 +218,7 @@
           <div class="card_item f30 fw4" v-for="(item,i) in eraly70ListQ" :key="i+0.1">{{item.name}}</div>
         </div>
       </div>
-      <div class="early_con_80" v-if="showState == 80">
+      <div class="early_con_80" v-if="showState == false">
         <div class="con_diago">
           <p class="diago_des f32 fw5">已生成完整音频！</p>
           <div class="btn_g">
@@ -219,8 +241,9 @@ export default {
     return {
       showBefore: false,
       hasResult: true,
-      showState: 70,
-      maxState: 70,
+      showState: 80,
+      maxState: 80,
+      showResult:80,
       beforeListLeft: [1, 2],
       beforeListRight: ["A", "a", "c", "D", "A", "a"],
       earlyList: [],
@@ -320,6 +343,12 @@ export default {
         { name: "gorilla", src: "" },
         { name: "baer", src: "" },
         { name: "horse", src: "" }
+      ],
+      Test80Qa: [
+        { src: require("../assets/img/lettera-test/1.png") },
+        { src: require("../assets/img/lettera-test/2.png") },
+        { src: require("../assets/img/lettera-test/3.png") },
+        { src: require("../assets/img/lettera-test/4.png") }
       ]
     };
   },
@@ -453,10 +482,17 @@ export default {
         text-align: left;
       }
       .right_result {
-        height: 3.1rem;
-        width: 5.5rem;
-        margin-top: 1.2rem;
-        margin-left: 3.66rem;
+        height: 3.37rem;
+        width: 6.15rem;
+        margin-top: 1.1rem;
+        margin-left: 3.26rem;
+        background: url("../assets/img/lettera-test/result.png") no-repeat;
+        background-size: 100% 100%;
+        font-size: 0.54rem;
+        line-height: 3.37rem;
+        padding-left: 2.8rem;
+        text-align: left;
+        color: #fff;
       }
       .close_result_img {
         height: 0.58rem;
@@ -627,20 +663,70 @@ export default {
       margin-top: 0.6rem;
 
       &_con {
-                margin-left: 1.66rem;
+        margin-left: 1.66rem;
         height: 3.2rem;
         width: 9.83rem;
         .con_des {
           width: 5.5rem;
           color: #684328;
           text-align: left;
-          margin-top: .6rem;
+          margin-top: 0.6rem;
         }
       }
-      .sy_btn{
-          height: 1.1rem;
-          width: 1.1rem;
-          margin: .24rem auto;;
+      .sy_btn {
+        height: 1.1rem;
+        width: 1.1rem;
+        margin: 0.24rem auto;
+      }
+    }
+    .lettea_test_80 {
+      margin: 0.86rem auto 0;
+      background: url("../assets/img/lettera-test/ban2.png") no-repeat;
+      background-size: 100% 100%;
+      height: 4.87rem;
+      width: 9.45rem;
+      display: flex;
+      align-items: center;
+      &_a {
+        height: 3.15rem;
+        width: 3.15rem;
+        margin-left: 0.77rem;
+        .q_a_img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      &_q {
+        width: 4.05rem;
+        height: 4.05rem;
+        margin-left: 0.57rem;
+        position: relative;
+        .q_q_img {
+          height: 1.51rem;
+          width: 2.01rem;
+          position: absolute;
+          &1 {
+            top: 0;
+            left: 0.5rem;
+          }
+          &2 {
+            top: 0.5rem;
+            right: 0;
+          }
+          &3 {
+            bottom: 0.5rem;
+            left: 0;
+          }
+          &4 {
+            bottom: 0;
+            right: 0.5rem;
+          }
+          &1,
+          &4 {
+            height: 2.01rem;
+            width: 1.51rem;
+          }
+        }
       }
     }
     .early_con_10 {
