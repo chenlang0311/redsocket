@@ -148,7 +148,7 @@
         </div>
         <img src="../assets/img/alphabet/luyin.png" alt class="sy_btn">
       </div>
-      <div class="lettea_test_80">
+      <div class="lettea_test_80" v-if="showState==80">
         <div class="lettea_test_80_q">
           <img
             :src="item.src"
@@ -352,6 +352,12 @@ export default {
       ]
     };
   },
+    beforeRouteEnter(to, from, next) {
+  next(vm => {
+    //触发resize强制横屏
+    vm.clCheckScrenn();
+  });
+},
   methods: {
     last() {
       if (this.showState - 10 > 0) {

@@ -62,8 +62,6 @@ export default {
     border-radius: 16px;
     background: red;
     color: #fff;
-    font-size: 28px;
-    font-weight: bold;
   }
 }
 </style>
