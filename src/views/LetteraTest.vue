@@ -1,5 +1,5 @@
 <template>
-  <div class="lettera_wrap">
+  <div class="lettera_wrap" id="deg90">
     <div class="lettea_before" v-if="showBefore">
       <div class="ban_wrap fw4">Aa</div>
       <div class="bt_bg">
