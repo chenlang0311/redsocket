@@ -15,6 +15,7 @@
           }"
           v-for="(item, i) in topList"
           :key="i"
+          @click="toTest()"
         >
           <p class="title f22 fwb">Step{{ item.id }}</p>
           <p class="name f24" :class="'name' + i">{{ item.name }}</p>
@@ -53,6 +54,7 @@
           }"
           v-for="(item, i) in bottomList"
           :key="i"
+          @click="toTest()"
         >
           <p class="title f22 fwb">Step{{ item.id }}</p>
           <p class="name f24" :class="'name' + (i + 5)">{{ item.name }}</p>
@@ -186,6 +188,13 @@ export default {
       //触发resize强制横屏
       vm.clCheckScrenn();
     });
+  },
+  methods:{
+    toTest(){
+      this.$router.push({
+        path:"/early1"
+      })
+    }
   }
 };
 </script>

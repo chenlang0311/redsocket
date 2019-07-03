@@ -15,6 +15,7 @@
           }"
           v-for="(item, i) in topList"
           :key="i"
+          @click="toTest()"
         >
           <p class="title f22 fwb">Step{{ item.id }}</p>
           <p class="name f24" :class="'name' + i">{{ item.name }}</p>
@@ -53,6 +54,7 @@
           }"
           v-for="(item, i) in bottomList"
           :key="i"
+          @click="toTest()"
         >
           <p class="title f22 fwb">Step{{ item.id }}</p>
           <p class="name f24" :class="'name' + (i + 4)">{{ item.name }}</p>
@@ -165,7 +167,14 @@ export default {
     vm.clCheckScrenn();
   });
 },
-  created() {}
+  created() {},
+  methods:{
+    toTest(){
+      this.$router.push({
+        path:"/LetteraTest"
+      })
+    }
+  }
 };
 </script>
 

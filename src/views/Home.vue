@@ -6,21 +6,21 @@
       <div class="item" @click="to('achievement',{lv:2})">证书(LV2)</div>
       <div class="item" @click="to('achievement',{lv:1})">证书(LV1)</div>
       <div class="item" @click="to('Early1List')">Early1目录</div>
-      <div class="item" @click="to('early1')">Early1-Step9</div>
+      <!-- <div class="item" @click="to('early1')">Early1-Step9</div> -->
       <div class="item" @click="to('Early2List')">Early2目录</div>
-      <div class="item" @click="to('early2')">Early2-Step9</div>
+      <!-- <div class="item" @click="to('early2')">Early2-Step9</div> -->
       <div class="item" @click="to('Early3List')">Early3目录</div>
-      <div class="item" @click="to('early3')">Early3-Step9</div>
+      <!-- <div class="item" @click="to('early3')">Early3-Step9</div> -->
       <div class="item" @click="to('Early4List')">Early4目录</div>
-      <div class="item" @click="to('early4')">Early4-Step9</div>
+      <!-- <div class="item" @click="to('early4')">Early4-Step9</div> -->
       <div class="item" @click="to('lettera')">LetterA目录</div>
-      <div class="item" @click="to('LetteraTest')">Lettera-Test</div>
+      <!-- <div class="item" @click="to('LetteraTest')">Lettera-Test</div> -->
       <div class="item" @click="to('FictionList')">Fiction目录</div>
-      <div class="item" @click="to('fiction')">Fiction-Test</div>
+      <!-- <div class="item" @click="to('fiction')">Fiction-Test</div> -->
       <div class="item" @click="to('EmergentList')">Emergent 目录 </div>
-      <div class="item" @click="to('emergement')">Emergent-Test</div>
+      <!-- <div class="item" @click="to('emergement')">Emergent-Test</div> -->
       <div class="item" @click="to('PreReadingList')">PreReading 目录 </div>
-      <div class="item" @click="to('PreReading')">PreReading-Test</div>
+      <!-- <div class="item" @click="to('PreReading')">PreReading-Test</div> -->
       <div class="item" @click="to('TestResult')">TestResult</div>
       
     </div>
