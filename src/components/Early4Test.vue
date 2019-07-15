@@ -76,6 +76,11 @@
       </div>
     </div>
     <div class="early_next_btn cfff fwb" v-if="showState == 40">提交</div>
+    <div class="earlt_btn_g" v-if="showState == 10">
+         <div class="earlt_btn_g_item item_left cfff fwb">播放次数: <span class="c122">0/2</span> </div>
+        <div class="early_next_btn cfff fwb">提交</div>
+     
+    </div>
   </div>
 </template>
 
@@ -160,9 +165,28 @@ export default {
   height: 100%;
   width: 100%;
   background: url("../assets/img/early4/bc.png") no-repeat;
-  background-size: contain;
+  background-size: 100% 100%;
   position: relative;
   overflow: hidden;
+  .earlt_btn_g{
+    margin-top: .28rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &_item{
+          background:url("../assets/img/early2/button.png") no-repeat;
+          background-size: 100% 100%;
+          height: .59rem;
+          width: 2.10rem;
+          text-align: center;
+          line-height: .59rem;
+      }
+      .early_next_btn{
+        margin-top: 0;
+        margin-left: .30rem;
+        margin-right: 0;
+      }
+  }
   .wrap_bg {
     background: rgba(255, 255, 255, 1);
     border: 0.14rem solid rgba(247, 247, 247, 1);

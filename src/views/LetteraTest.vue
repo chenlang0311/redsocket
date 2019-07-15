@@ -1,6 +1,6 @@
 <template>
   <div class="lettera_wrap" id="deg90">
-    <div class="lettea_before" v-if="showBefore">
+    <div class="lettea_before" v-if="showState === 90">
       <div class="ban_wrap fw4">Aa</div>
       <div class="bt_bg">
         <img src="../assets/img/lettera-test/bottom.png" alt class="bottom_img">
@@ -25,7 +25,7 @@
     </div>
 
     <div class="lettera-test" v-else>
-      <div class="sort_num" v-if="showState==10||showState==20||showState==30||showState==40">
+      <div class="sort_num" v-if="showState==10||showState==20||showState==30">
         <img src="../assets/img/alphabet/biaoqian.png" class="bg_img">
         <p class="sort_num_des">1/5</p>
       </div>
@@ -242,7 +242,7 @@ export default {
       showBefore: false,
       hasResult: true,
       showState: 80,
-      maxState: 80,
+      maxState: 90,
       showResult:80,
       beforeListLeft: [1, 2],
       beforeListRight: ["A", "a", "c", "D", "A", "a"],
@@ -762,7 +762,7 @@ export default {
         }
         .answer_wrap {
           background: url("../assets/img/early1/ban1_1.png") no-repeat;
-          background-size: contain;
+          background-size: 100% 100%;
           padding-top: 0.95rem;
 
           .answer_des {

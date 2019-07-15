@@ -4,7 +4,7 @@
       <img src="../assets/img/early2/biaoqian.png" class="bg_img">
       <p class="sort_num_des">1/5</p>
     </div>
-    <img src="../assets/img/alphabet/left.png" alt class="jiantou_next jiantou_last" @click="last">
+    <img src="../assets/img/alphabet/left.png" v-if="showState!=10" class="jiantou_next jiantou_last" @click="last">
     <img src="../assets/img/alphabet/jiantou-icon.png" alt class="jiantou_next" @click="next">
     <div class="early_con_10" v-if="showState == 10">
       <div class="early_con_10_top">
@@ -85,6 +85,11 @@
             <div class="early_next_bottom-item f51 fwb cfff" v-for="(item,i) in early40List" :key="i">{{item}}</div>
         </div>
     </div>
+    <div class="early_result" v-if="showState==50">
+      <img src="../assets/img/early1/guidao.png" alt="" class="guidao_img">
+      <img src="../assets/img/early1/che1.png" alt="" class="che1_img">
+      <img src="../assets/img/early1/che2.png" alt="" class="che2_img">
+    </div>
     <img src="../assets/img/alphabet/shengyin-icon.png" alt class="sy_btn sy_btn40" v-if="showState == 40">
   </div>
 </template>
@@ -93,8 +98,8 @@
 export default {
   data() {
     return {
-      showState: 10,
-      maxState: 40,
+      showState: 50,
+      maxState: 50,
       early40List:["the","Here is","Food"],
       earlyList: [],
       earlyListQ: [
@@ -153,12 +158,14 @@ export default {
   },
   methods: {
     last() {
+       console.log("last")
       if (this.showState - 10 > 0) {
         this.showState = this.showState - 10;
       }
     },
     next() {
-      if (this.showState < this.maxState) {
+      console.log("next")
+      if (this.maxState-this.showState >0) {
         this.showState += 10;
       }
     }
@@ -174,6 +181,28 @@ export default {
   background-size: 100% 100%;
   position: relative;
   overflow: hidden;
+  .early_result{
+    img{
+      position: absolute;
+    }
+    .guidao_img{
+      height: 4.47rem;
+      width: 100%;
+      bottom: 0;
+    }
+    .che1_img{
+      height: 1.70rem;
+      width: 2.41rem;
+      bottom: 2.83rem;
+      left: 3.38rem;
+    }
+    .che2_img{
+      height: 1.62rem;
+      width: 2.58rem;
+      left: 1.46rem;
+      bottom: 2.31rem;
+    }
+  }
   .wrap_bg {
     background: rgba(255, 255, 255, 1);
     border: 0.14rem solid rgba(247, 247, 247, 1);
@@ -234,6 +263,7 @@ export default {
     position: absolute;
     top: 2.68rem;
     right: 0.3rem;
+    z-index: 100;
   }
   .jiantou_last {
     left: 0.3rem;
@@ -266,7 +296,7 @@ export default {
       }
       .answer_wrap {
         background: url("../assets/img/early1/ban1_1.png") no-repeat;
-        background-size: contain;
+        background-size: 100% 100%;
         padding-top: 0.95rem;
 
         .answer_des {

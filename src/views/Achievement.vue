@@ -2,7 +2,7 @@
   <div class="myachieve" id="deg90">
     <div
       class="lv1"
-      :style="{backgroundImage: 'url(' + (showState==10?lv1BG:lv1GbBack) + ')',backgroundRepeat:'no-repeat',backgroundSize:'contain'}"
+      :style="{backgroundImage: 'url(' + (showState==10?lv1BG:lv1GbBack) + ')',backgroundRepeat:'no-repeat',backgroundSize:'100% 100%'}"
     >
       <div class="lv1_con" v-if="showState == 10">
         <p class="con_title f40 fw4">
@@ -299,7 +299,7 @@ export default {
     overflow: hidden;
     .lv1_con {
       background: url("../assets/img/achieve/lv1_con-bg.png") no-repeat;
-      background-size: contain;
+      background-size: 100% 100%;
       height: 3.96rem;
       width: 6.45rem;
       margin-top: 1.17rem;
@@ -388,7 +388,7 @@ export default {
       display: flex;
       .lv1_left_top {
         background: url("../assets/img/achieve/lv1_top.png") no-repeat;
-        background-size: contain;
+        background-size: 100% 100%;
         height: 3.39rem;
         width: 6.2rem;
         padding-top: 0.44rem;
@@ -398,7 +398,7 @@ export default {
       }
       .lv1_left_bottom {
         background: url("../assets/img/achieve/lv1_bottom.png") no-repeat;
-        background-size: contain;
+        background-size: 100% 100%;
         height: 2.07rem;
         width: 6.2rem;
         margin-top: 0.22rem;
@@ -409,7 +409,7 @@ export default {
       }
       .lv1_next_right {
         background: url("../assets/img/achieve/lv1_right.png") no-repeat;
-        background-size: contain;
+        background-size: 100% 100%;
         height: 5.72rem;
         width: 5.71rem;
         margin-left: 0.27rem;
@@ -446,7 +446,7 @@ export default {
         &_0,
         &_1 {
           background: url("../assets/img/achieve/lv2_left_bottom.png") no-repeat;
-          background-size: contain;
+          background-size: 100% 100%;
           height: 1rem;
           width: 3.7rem;
           padding-right: 0.45rem;
@@ -459,7 +459,7 @@ export default {
         }
         &_2 {
           background: url("../assets/img/achieve/lv2_top_right.png") no-repeat;
-          background-size: contain;
+          background-size: 100% 100%;
           height: 1rem;
           width: 4.4rem;
           padding-right: 0.45rem;
@@ -474,7 +474,7 @@ export default {
         }
         &_left_top {
           background: url("../assets/img/achieve/lv2_left_mid.png") no-repeat;
-          background-size: contain;
+          background-size: 100% 100%;
           height: 2.64rem;
           width: 6.2rem;
           padding-top: 0.43rem;
@@ -498,7 +498,7 @@ export default {
         }
         &_left_bottom {
           background: url("../assets/img/achieve/lv2_left_bottom.png") no-repeat;
-          background-size: contain;
+          background-size: 100% 100%;
           height: 1.78rem;
           width: 6.2rem;
           text-align: left;

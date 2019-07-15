@@ -1,6 +1,6 @@
 <template>
   <div class="emerge-test">
-    <div class="sort_num" v-if="showState==10||showState==20||showState==30||showState==40">
+    <div class="sort_num" v-if="showState==10||showState==30||showState==40">
       <img src="../assets/img/early2/biaoqian.png" class="bg_img">
       <p class="sort_num_des">1/5</p>
     </div>
@@ -104,7 +104,10 @@
     </div>
     <div class="early_con_80" v-if="showState == 80">
         <div class="con_diago">
-            <p class="diago_des f32 fw5">已生成完整音频！</p>
+          <div class="diago_des">
+<p  class="f32 fw5">已生成完整音频！</p>
+          </div>
+            
             <div class="btn_g ">
                 <div class="btn_i cfff f32">一键分享</div>
                 <div class="btn_i cfff f32">下载</div>
@@ -524,6 +527,7 @@ export default {
       justify-content: space-between;
       margin-left: 2.76rem;
       margin-right: 3.03rem;
+      min-width: 7.55rem;
       .card_img {
         height: 2.34rem;
         width: 1.83rem;
@@ -555,8 +559,16 @@ export default {
             background-size: 100% 100%;
             margin-top: .76rem;
             .diago_des{
-                margin-top: 2.38rem;
-                line-height: 1;
+                margin: 2.24rem auto 0;
+                padding-top: .14rem;
+                height: .69rem;
+                width: 3.12rem;
+                text-align: center;
+                p{
+                  line-height: 1;
+                  background:rgba(254,145,131,.41);
+                border-radius: 50%;
+                }
             }
             .btn_g{
                 display: flex;

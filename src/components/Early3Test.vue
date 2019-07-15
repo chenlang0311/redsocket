@@ -2,7 +2,7 @@
   <div class="early3-test">
     <div class="sort_num">
       <img src="../assets/img/early2/biaoqian.png" class="bg_img">
-      <p class="sort_num_des">1/5</p>
+      <p class="sort_num_des">1/4</p>
     </div>
     <img src="../assets/img/alphabet/left.png" alt class="jiantou_next jiantou_last" @click="last">
     <img src="../assets/img/alphabet/jiantou-icon.png" alt class="jiantou_next" @click="next">

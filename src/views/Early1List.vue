@@ -8,7 +8,7 @@
           :style="{
             backgroundImage: 'url(' + item.bc + ')',
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
+            backgroundSize: '100% 100%',
             height: item.height + 'rem',
             width: item.width + 'rem',
             marginRight: item.mr + 'rem'
@@ -47,7 +47,7 @@
           :style="{
             backgroundImage: 'url(' + item.bc + ')',
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
+            backgroundSize: '100% 100%',
             height: item.height + 'rem',
             width: item.width + 'rem',
             marginRight: item.mr + 'rem'
@@ -227,6 +227,7 @@ export default {
           width: 50%;
           margin: 0 auto;
           line-height: 1;
+          margin-top: .01rem;
         }
         .name {
           width: 50%;
@@ -245,10 +246,14 @@ export default {
           &5 {
             width: 80%;
           }
-
+          &8{
+            letter-spacing: -.03rem;
+          }
+          &9{
+            letter-spacing: -.02rem;
+          }
           &0,
-          &8,
-          &13{
+          &8{
             width: 100%;
           }
         }

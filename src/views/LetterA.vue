@@ -8,7 +8,7 @@
           :style="{
             backgroundImage: 'url(' + item.bc + ')',
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
+            backgroundSize: '100% 100%',
             height: item.height + 'rem',
             width: item.width + 'rem',
             marginRight: item.mr + 'rem'
@@ -47,7 +47,7 @@
           :style="{
             backgroundImage: 'url(' + item.bc + ')',
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
+            backgroundSize: '100% 100%',
             height: item.height + 'rem',
             width: item.width + 'rem',
             marginRight: item.mr + 'rem'

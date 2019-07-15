@@ -93,13 +93,13 @@ export default {
   }
   .jump_btn {
     background: url("../assets/img/alphabet/button2.png") no-repeat;
-    background-size: contain;
+    background-size: 100% 100%;
     color: rgba(51, 51, 51, 1);
     margin-right: 1.19rem;
   }
   .next_btn {
     background: url("../assets/img/alphabet/button.png") no-repeat;
-    background-size: contain;
+    background-size: 100% 100%;
     color: rgba(255, 255, 255, 1);
     margin: 0.46rem auto 0;
   }

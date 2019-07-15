@@ -8,7 +8,7 @@
           :style="{
             backgroundImage: 'url(' + item.bc + ')',
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
+            backgroundSize: '100% 100%',
             height: item.height + 'rem',
             width: item.width + 'rem',
             marginRight: item.mr + 'rem'
@@ -47,7 +47,7 @@
           :style="{
             backgroundImage: 'url(' + item.bc + ')',
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
+            backgroundSize: '100% 100%',
             height: item.height + 'rem',
             width: item.width + 'rem',
             marginRight: item.mr + 'rem'
@@ -243,6 +243,7 @@ export default {
           width: 50%;
           margin: 0 auto;
           line-height: 1;
+          margin-top: .01rem;
         }
         .name {
           width: 50%;
@@ -264,6 +265,9 @@ export default {
       
            &0,&8,&11{
               width: 100%;
+          }
+          &11{
+            letter-spacing: -0.02rem;
           }
         }
         .item_img {
@@ -312,11 +316,6 @@ export default {
     .list_bottom {
       margin-top: 0.26rem;
       .name {
-        &4 {
-        }
-        &7 {
-          width: 100%;
-        }
       }
       .item_img {
         &4 {

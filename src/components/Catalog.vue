@@ -60,7 +60,7 @@ export default {
 <style lang="scss">
 .catalog {
   background: url("../assets/img/alphabet/bc.png") no-repeat;
-  background-size: contain;
+  background-size: 100% 100%;
   height: 7.5rem;
   width: 13.34rem;
   overflow: hidden;
@@ -109,16 +109,16 @@ export default {
     }
     .wrap_item0 {
       background: url("../assets/img/alphabet/kuang1.png") no-repeat;
-      background-size: contain;
+      background-size: 100% 100%;
     }
     .wrap_item1 {
       background: url("../assets/img/alphabet/kuang2.png") no-repeat;
-      background-size: contain;
+      background-size: 100% 100%;
       margin: 0 0.3rem;
     }
     .wrap_item2 {
       background: url("../assets/img/alphabet/kuang3.png") no-repeat;
-      background-size: contain;
+      background-size: 100% 100%;
     }
   }
   .bottom_bar_img{

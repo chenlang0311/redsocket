@@ -1,6 +1,6 @@
 <template>
   <div class="prereading-test">
-    <div class="sort_num">
+    <div class="sort_num" v-if="showState!=50">
       <img src="../assets/img/early2/biaoqian.png" class="bg_img">
       <p class="sort_num_des">1/5</p>
     </div>
@@ -267,7 +267,7 @@ export default {
       }
       .answer_wrap {
         background: url("../assets/img/early1/ban1_1.png") no-repeat;
-        background-size: contain;
+        background-size: 100% 100%;
         padding-top: 0.95rem;
 
         .answer_des {
@@ -462,6 +462,7 @@ export default {
       justify-content: space-between;
       margin-left: 3.50rem;
       margin-right: 3.50rem;
+      min-width: 6.34rem;
       .card_img {
         height: 2.34rem;
         width: 1.83rem;

@@ -8,7 +8,7 @@
           :style="{
             backgroundImage: 'url(' + item.bc + ')',
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
+            backgroundSize: '100% 100%',
             height: item.height + 'rem',
             width: item.width + 'rem',
             marginRight: item.mr + 'rem'
@@ -47,7 +47,7 @@
           :style="{
             backgroundImage: 'url(' + item.bc + ')',
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
+            backgroundSize: '100% 100%',
             height: item.height + 'rem',
             width: item.width + 'rem',
             marginRight: item.mr + 'rem'
@@ -243,6 +243,7 @@ export default {
           width: 50%;
           margin: 0 auto;
           line-height: 1;
+          margin-top: .01rem;
         }
         .name {
           width: 50%;

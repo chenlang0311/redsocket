@@ -2,7 +2,7 @@
   <div class="fiction-test">
     <div class="sort_num">
       <img src="../assets/img/early2/biaoqian.png" class="bg_img">
-      <p class="sort_num_des">1/5</p>
+      <p class="sort_num_des">1/4</p>
     </div>
     <img src="../assets/img/alphabet/left.png" alt class="jiantou_next jiantou_last" @click="last">
     <img src="../assets/img/alphabet/jiantou-icon.png" alt class="jiantou_next" @click="next">
@@ -311,7 +311,7 @@ export default {
     &_q {
       margin-top: 0.8rem;
       // margin-left: 1.75rem;
-      line-height: 0.21rem;
+      line-height: 1;
     }
     &_a {
       display: flex;
@@ -323,6 +323,7 @@ export default {
       display: flex;
       align-items: center;
       margin-bottom: 0.3rem;
+      line-height: 1;
     }
     .answer_idx {
       width: 0.33rem;

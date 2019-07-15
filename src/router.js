@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -48,7 +48,10 @@ export default new Router({
     {//14个目录
       path: '/Early1List',
       name: 'Early1List',
-      component: () => import(/* webpackChunkName: "about" */ './views/Early1List.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/Early1List.vue'),
+      meta:{
+        title:"Early 1 Fiction a Quick Picnic"
+      }
     },
     {//14个目录
       path: '/early2',
@@ -58,12 +61,18 @@ export default new Router({
     {//14个目录
       path: '/Early2List',
       name: 'Early2List',
-      component: () => import(/* webpackChunkName: "about" */ './views/Early2List.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/Early2List.vue'),
+      meta:{
+        title:"Early 2 Fiction Hatching eggs"
+      }
     },
     {//14个目录
       path: '/Early3List',
       name: 'Early3List',
-      component: () => import(/* webpackChunkName: "about" */ './views/Early3List.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/Early3List.vue'),
+      meta:{
+        title:"Early 3 Brave Grace"
+      }
     },
     {//14个目录
       path: '/early3',
@@ -78,7 +87,10 @@ export default new Router({
     {//14个目录
       path: '/Early4List',
       name: 'Early4List',
-      component: () => import(/* webpackChunkName: "about" */ './views/Early4List.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/Early4List.vue'),
+      meta:{
+        title:"Early 4 Fiction  All by Myself"
+      }
     },
     {//14个目录
       path: '/EmergentList',
@@ -113,3 +125,16 @@ export default new Router({
   ]
 });
 
+
+router.beforeEach((to, from, next) => {
+  if(to.meta.title) {
+  document.title = to.meta.title;
+}
+
+/*if(to.path !== global.location.pathname) {
+      location.assign(to.fullPath)
+}*/   
+
+next();
+}); 
+export default router
