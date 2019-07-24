@@ -69,7 +69,7 @@ export default {
     },
     next() {
         if(this.showState<this.maxState){
-this.showState += 10;
+        this.showState += 10;
         }
       
     }

@@ -79,6 +79,46 @@
         >{{ item }}</div>
       </div>
     </div>
+    <div class="early_con_50"  v-if="showState == 50">
+        <div class="early_con_50_wrap wrap_bg">
+          <div class="con">
+            <div class="con_left">last</div>
+            <div class="con_right">none</div>
+          </div>
+          <p class="con_des">At <span class="c800">last,</span>  Paulo flew a rocket ship high above the world.</p>
+        </div>
+        <div class="btngroup">
+        <div class="en_btn al_btn">
+          English
+          <img src="../assets/img/early1/duigou.png" alt class="right_img">
+        </div>
+        <div class="fy_btn al_btn">翻译</div>
+        <div class="zd_btn al_btn">自动</div>
+        <div class="cf_btn al_btn">
+          重复次数:
+          <span class="c122">0/5</span>
+        </div>
+        <div class="sd_btn al_btn">
+          播放速度:
+          <span class="c122">正常</span>
+        </div>
+      </div>
+      <img src="../assets/img/alphabet/shengyin-icon.png" alt class="sy_btn">
+    </div>
+
+    <div class="early_con_60 wrap_bg"  v-if="showState == 60">
+      <div class="con_60_top">
+        <div>watched</div>
+         <div>want</div>
+          <div>ride</div>
+           <div>over</div>
+            <div>last</div>
+      </div>
+      <div>
+          ① Dad took him for a                       
+          <span class="lv1_left_top_bd"></span>in a hot air balloon.
+        </div>
+    </div>
   </div>
 </template>
 
@@ -86,8 +126,8 @@
 export default {
   data() {
     return {
-      showState: 40,
-      maxState: 40,
+      showState: 60,
+      maxState: 100,
       early10List: [
         { f: "every", s: "thing", deg: 10 + (Math.random() - 1) * 10 },
         { f: "birth", s: "day", deg: 10 + (Math.random() - 1) * 10 },
@@ -134,6 +174,9 @@ export default {
     width: 1.1rem;
     margin: 0 auto;
   }
+  .c800{
+    color: #ff1800;
+  }
   .sy_btn10 {
     margin-top: 0.21rem;
   }
@@ -174,6 +217,37 @@ export default {
     width: 100%;
     position: absolute;
   }
+  .btngroup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.19rem;
+      .al_btn{
+        display: flex;
+        align-items: center;
+        height: .55rem;
+        background:rgba(126,106,176,1);
+        box-shadow:0px .04rem 0px 0px rgba(115,94,168,1);
+        border-radius:.10rem;
+        min-width: 1.60rem;
+        justify-content: center;
+        color: #fff;
+        font-weight: 400;
+        margin-right: .20rem;
+        font-size: .28rem;
+        padding: 0 .19rem;
+        .right_img{
+          height: .22rem;
+          width: .28rem;
+          margin-left: .17rem;
+        }
+      }
+    }
+    .sy_btn{
+      height: 1.10rem;
+      width: 1.10rem;
+      margin:  .27rem auto 0;
+    }
   .jiantou_next {
     height: 0.69rem;
     width: 0.66rem;
@@ -375,6 +449,62 @@ export default {
         line-height: .76rem;
         text-align: center;
       }
+    }
+  }
+  .early_con_50{
+    margin-top: .4rem;
+    &_wrap{
+      height: 3.41rem;
+      width: 10.09rem;
+      margin: 0 auto;
+      .con{
+        display: flex;
+        align-items: center;
+        margin-top: .54rem;
+      }
+      .con_left{
+        height: 1.16rem;
+        width: 2.17rem;
+        border-radius: .08rem;
+        background-color: rgb(255, 198, 0);
+        color: #000;
+        font-size: .59rem;
+        line-height: 1.16rem;
+        margin-right: .48rem;
+      }
+      .con_right{
+        height: 1.2rem;
+        width: 1.2rem;
+        border: 1px #000 solid;
+        border-radius: 50%;
+        color: #000;
+        font-size: .32rem;
+        line-height: 1.2rem;
+      }
+    }
+    .con_des{
+      line-height: 1;
+      margin-top: .63rem;
+      font-size: .38rem;
+      color: #000;
+    }
+  }
+  .early_con_60{
+    height: 3.82rem;
+    width: 10.35rem;
+    margin-top: 1.15rem;
+    margin-left: 1.55rem;
+    .con_60_top{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 1.01rem;
+      width: 7.9rem;
+      background-color: rgb(52, 196, 164);
+      color: #fff;
+      font-size: .4rem;
+      font-weight: bold;
+      margin: .83rem auto .72rem;
     }
   }
 }

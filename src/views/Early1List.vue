@@ -39,7 +39,7 @@
           />
         </div>
       </div>
-      <img src="../assets/img/early1/hengtiao.png" alt="" class="top_ht" />
+      <img src="../assets/img/early1/ht.png" alt="" class="top_ht" />
       <div class="list_top list_bottom">
         <div
           class="list_top-item"
@@ -57,16 +57,16 @@
           @click="toTest()"
         >
           <p class="title f22 fwb">Step{{ item.id }}</p>
-          <p class="name f24" :class="'name' + (i + 5)">{{ item.name }}</p>
+          <p class="name f24" :class="'name' + (i + 6)">{{ item.name }}</p>
           <img
             :src="item.src"
             alt=""
             class="item_img"
-            :class="'item_img' + (i + 5)"
+            :class="'item_img' + (i + 6)"
           />
         </div>
       </div>
-      <img src="../assets/img/early1/hengtiao.png" alt="" class="top_ht" />
+      <img src="../assets/img/early1/hengtiao.png" alt="" class="top_ht bottom_ht" />
     </div>
   </div>
 </template>
@@ -125,11 +125,8 @@ export default {
           bc: require("../assets/img/fictionlist/5.png"),
           height: "1.75",
           width: "1.43",
-          mr: "0"
-        }
-      ],
-       bottomList: [
-           
+          mr: "0.35"
+        },
         {
           id: 6,
           top: false,
@@ -138,8 +135,10 @@ export default {
           bc: require("../assets/img/fictionlist/6.png"),
           height: "1.72",
           width: "1.37",
-          mr: "0.37"
-        },
+          mr: "0"
+        }
+      ],
+       bottomList: [
         {
           id: 7,
           top: false,
@@ -153,6 +152,16 @@ export default {
            {
           id: 8,
           top: false,
+          name: "Fun!Fun! Fun!",
+          src: require("../assets/img/early1/fun.png"),
+          bc: require("../assets/img/fictionlist/8.png"),
+          height: "1.72",
+          width: "1.37",
+          mr: ".35"
+        },
+        {
+          id: 9,
+          top: false,
           name: " I can  Choose",
           src: require("../assets/img/fictionlist/list/7.png"),
           bc: require("../assets/img/fictionlist/8.png"),
@@ -161,7 +170,7 @@ export default {
           mr: ".35"
         },
         {
-          id: 9,
+          id: 10,
           top: false,
           name: "Shoo! Shoo!  Shoo!",
           src: require("../assets/img/early1/09.png"),
@@ -171,14 +180,14 @@ export default {
           mr: ".35"
         },
         {
-          id: 10,
+          id: 11,
           top: false,
           name: "My  Achievement",
           src: require("../assets/img/early4/014.png"),
           bc: require("../assets/img/fictionlist/14.png"),
           height: "1.74",
           width: "1.38",
-          mr: "0"
+          mr: "1.67"
         }
       ],
     };
@@ -211,9 +220,12 @@ export default {
     overflow: hidden;
     .top_ht {
       height: 0.55rem;
-      width: 9.63rem;
+      width: 11.25rem;
       margin-top: -0.12rem;
-      margin-left: 2.01rem;
+      margin-left: 1.25rem;
+    }
+    .bottom_ht{
+      width: 9.63rem;
     }
     .list_top {
       display: flex;
@@ -252,8 +264,7 @@ export default {
           &9{
             letter-spacing: -.02rem;
           }
-          &0,
-          &8{
+          &0,&7{
             width: 100%;
           }
         }
@@ -303,29 +314,29 @@ export default {
     .list_bottom {
       margin-top: 0.20rem;
       .name {
-        &7,&9{
+       &10,&9{
           width: 100%;
         }
-        &6{
+        &7{
             margin-top: .14rem;
         }
       }
       .item_img {
-          &6{
-              height: .45rem;
-              width: .49rem;
+          &7{
+              height: .51rem;
+              width: .51rem;
           }
-        &7{
+        &8{
           height: 0.41rem;
           width: 0.51rem;
           margin-top: 0.18rem;
         }
-        &8 {
+        &9 {
           height: 0.44rem;
           width: 0.44rem;
           margin-top: 0.19rem;
         }
-        &9 {
+        &10 {
           height: 0.44rem;
           width: 0.49rem;
           margin-top: 0.22rem;

@@ -39,7 +39,7 @@
           />
         </div>
       </div>
-      <img src="../assets/img/fictionlist/list/hengtiao.png" alt="" class="top_ht" />
+      <img src="../assets/img/early3/ht_top.png" alt="" class="top_ht" />
       <div class="list_top list_bottom">
         <div
           class="list_top-item"
@@ -57,16 +57,16 @@
           @click="toTest()"
         >
           <p class="title f22 fwb">Step{{ item.id }}</p>
-          <p class="name f24" :class="'name' + (i + 6)">{{ item.name }}</p>
+          <p class="name f24" :class="'name' + (i + 7)">{{ item.name }}</p>
           <img
             :src="item.src"
             alt=""
             class="item_img"
-            :class="'item_img' + (i + 6)"
+            :class="'item_img' + (i + 7)"
           />
         </div>
       </div>
-      <img src="../assets/img/fictionlist/list/hengtiao.png" alt="" class="top_ht" />
+      <img src="../assets/img/early3/ht_bottom.png" alt="" class="top_ht bt_ht" />
     </div>
   </div>
 </template>
@@ -76,18 +76,19 @@ export default {
   data() {
     return { 
         bottomList: [
-        {
-          id: 7,
+       
+     {
+          id: 8,
           top: false,
-          name: "I can  Choose",
-          src: require("../assets/img/fictionlist/list/7.png"),
-          bc: require("../assets/img/fictionlist/7.png"),
+          name: "Fun!Fun! Fun!",
+          src: require("../assets/img/early1/fun.png"),
+          bc: require("../assets/img/fictionlist/8.png"),
           height: "1.72",
           width: "1.37",
           mr: ".35"
         },
-        {
-          id: 8,
+         {
+          id: 9,
           top: false,
           name: "True  or  False",
           src: require("../assets/img/fictionlist/list/8.png"),
@@ -97,7 +98,7 @@ export default {
           mr: ".35"
         },
         {
-          id: 9,
+          id: 10,
           top: false,
           name: "I Know  the Answer",
           src: require("../assets/img/early3/09.png"),
@@ -107,7 +108,7 @@ export default {
           mr: ".35"
         },
         {
-          id: 10,
+          id: 11,
           top: false,
           name: "Put it in Order",
           src: require("../assets/img/early3/10.png"),
@@ -117,7 +118,7 @@ export default {
           mr: ".35"
         },
         {
-          id: 11,
+          id: 12,
           top: false,
           name: "Little Quiz",
           src: require("../assets/img/early3/11.png"),
@@ -127,14 +128,14 @@ export default {
           mr: ".35"
         },
         {
-          id: 12,
+          id: 13,
           top: false,
           name: "My  Achievement",
           src: require("../assets/img/early3/12.png"),
           bc: require("../assets/img/fictionlist/12.png"),
           height: "1.74",
           width: "1.38",
-          mr: "0"
+          mr: "1.65"
         }
       ],
       topList: [
@@ -195,6 +196,16 @@ export default {
           bc: require("../assets/img/fictionlist/6.png"),
           height: "1.72",
           width: "1.37",
+          mr: "0.35"
+        },
+         {
+          id: 7,
+          top: false,
+          name: "I can  Choose",
+          src: require("../assets/img/fictionlist/list/7.png"),
+          bc: require("../assets/img/fictionlist/7.png"),
+          height: "1.72",
+          width: "1.37",
           mr: "0"
         },
       ]};
@@ -226,10 +237,13 @@ export default {
         width: 100%;
         overflow: hidden;
         .top_ht {
-      height: 0.55rem;
-      width: 11.20rem;
-      margin-top: -0.12rem;
-      margin-left: 1.20rem;
+      height: 0.16rem;
+      width: 12.15rem;
+      // margin-top: -0.12rem;
+      margin-left: .64rem;
+    }
+    .bt_ht{
+      width: 10.41rem;
     }
     .list_top {
       display: flex;
@@ -263,10 +277,10 @@ export default {
               width: 80%;
           }
       
-           &0,&8,&11{
+           &0,&8,&9,&12{
               width: 100%;
           }
-          &11{
+          &12{
             letter-spacing: -0.02rem;
           }
         }
@@ -331,26 +345,30 @@ export default {
           width: 0.48rem;
         }
         &7{
+          height: .51rem;
+          width: .51rem;
+        }
+        &8{
               height: .32rem;
               width: .63rem;
               margin-top: .13rem;
           }
-          &8{
+          &9{
               height: .48rem;
               width: .48rem;
               margin-top: .18rem;
           }
-          &9{
+          &10{
               height: .34rem;
               width: .39rem;
               margin-top: .10rem;
           }
-          &10{
+          &11{
               height: .50rem;
               width: .50rem;
               margin-top: .10rem;
           }
-          &11{
+          &12{
               height: .44rem;
               width: .49rem;
               margin-top: .23rem;

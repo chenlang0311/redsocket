@@ -47,6 +47,9 @@
             <div class="early_next_bottom-item f38 fwb cfff" v-for="(item,i) in earlyList" :key="i">{{item}}</div>
         </div>
     </div>
+    <div class="early_30" v-if="showState==30">
+
+    </div>
   </div>
 </template>
 
@@ -54,17 +57,24 @@
 export default {
     data(){
         return{
-            showState:10,
+            showState: 30,
+          maxState:30,
             earlyList:["Out.","are coming","Some baby spiders","Look!"]
         }
     },
     methods:{
-        last(){
-            this.showState=10;
-        },
-        next(){
-            this.showState=20;
+        last() {
+        if(this.showState-10>0){
+            this.showState = this.showState -10;
         }
+      
+    },
+    next() {
+        if(this.showState<this.maxState){
+        this.showState += 10;
+        }
+      
+    }
     }
 };
 </script>
